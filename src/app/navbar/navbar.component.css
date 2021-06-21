@@ -1,0 +1,49 @@
+.header{
+    /*height: 58px;*/
+    width: 101vw;
+    padding: 0 1.898vw 0.511vw 1.022vw;
+    box-shadow: 0 0.219vw 0.438vw 0 rgba(0, 0, 0, 0.03);
+    background-color: #ffffff;
+}
+.logo{
+    width:8vw;
+    height:50px;
+}
+.avatar {
+    max-width: fit-content;
+    width: 2.555vw;
+    height: 2.628vw;
+    border-radius: 20px;
+  }
+  .username{
+    max-width: max-content;
+    height: 1.46vw;
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4b4b4b;
+  }
+  .info{
+    max-width: max-content;
+    height: 1.095vw;
+    font-family: Inter;
+    font-size: 0.876vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #8e8e8e;
+  }
+  .vl{
+    width: 1px;
+    height: inherit;
+    padding:0;
+    background-color: rgba(0, 0, 0, 0.07);
+  }

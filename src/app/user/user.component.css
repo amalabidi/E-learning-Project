@@ -1,0 +1,141 @@
+.container{
+    max-width: inherit;
+}
+.colTitle{
+    text-align: center;
+}
+#add{
+    color: #1c84c6;
+    background-color: transparent;
+}
+#add:hover{
+    color: white;
+    background-color: #1c84c6;
+}
+#other{
+    color:#f8ac59;
+    border-color: #f8ac59;
+    background-color: transparent;
+}
+#other:hover{
+    color: white;
+    background-color: #f8ac59
+}
+#other:focus{
+    border-color: #f8ac59;
+    box-shadow: 0 0 0 0.25rem rgb(245 178 89 / 44%);
+}
+#text{
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #1c84c6;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.inputFormmat{
+    padding:8px;
+    font-size:1.5rem;
+}
+#dropdownMenuButton1::after{
+    float:right;
+    margin-top:4%;
+}
+#dropdownMenuButton1:focus{
+    border-color: #565e64;
+    box-shadow: 0 0 0 0.25rem rgb(130 138 145 / 50%);
+}
+.btn-group-lg>.btn, .btn-lg{
+    font-size: 0.8rem;
+}
+#annuler{
+    background: white;
+    border: 1px solid #e7eaec;
+    color:black;
+}
+#annuler:focus{
+    border-color: #f8ac59;
+    box-shadow: 0 0 0 0.25rem rgb(245 178 89 / 44%);
+}
+.footer--peek{
+    /*position: fixed;*/
+    bottom: 0;
+}
+.tableElem{
+    text-align: center;
+    width:30%
+}
+.card__subtitle{
+    text-align:center;
+    margin-top:2rem;
+}
+.menu-btn {
+    border: 0.5px solid lightgrey;
+    font-size: 1.5rem;
+    padding: 4px;
+    color: #495057;
+    background-color: white;
+}
+
+.menu {
+    position: fixed;
+    padding-top: 10px;
+    z-index: 200;
+    margin-top: 4rem;
+    background-color: white;
+    width: 24rem;
+    max-height: 16rem;
+    overflow-y: scroll;
+}
+
+.menu-option {
+    padding: 6px 20px 6px;
+}
+
+#overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.button{
+    width:fit-content;
+    height: 3.212vw;
+    margin: 1.46vh 1.168vw 0;
+    padding: 0.76vh 4.526vw;
+    border-radius: 4px;
+    background-color: #32bc9b;
+    outline: none !important;
+    border: 1px solid #32bc9b !important;
+
+}
+.list{
+    padding: 1.46vw 1.168vw;
+    height: 7.65vw  !important;
+    margin-bottom: 9.3vh;
+}
+.container{
+    padding-left: 13% !important;
+    padding-right:13% !important;
+    padding-top:7% !important;
+}

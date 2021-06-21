@@ -1,0 +1,222 @@
+<div class="container">
+    <div>
+        <div class="page-title">
+            Relances
+        </div>
+    </div>
+    <div style="padding-top: 2%;margin-bottom:2%" class="list">
+        <div class="list-header">
+            <div class="row">
+                <div style="max-width: max-content;" class="col">
+                    <input [(ngModel)]="searchRelance" style="margin:0;margin-top: 1vh;width: 32.387vw;"
+                        class="searchInput" type="text" placeholder="Recherche des Relances">
+                    <span style="position: absolute;
+                            top: 31%;
+                            left: 89%;;color: #c7c7c7;font-size: 1.8vw;" class="material-icons">
+                        search
+                    </span>
+                </div>
+                <div style="max-width: 100%" class="col">
+                    <button (click)="relanceModal()"
+                        style=" padding: 0.876vw 4.818vw 0.876vw 4.818vw;margin: 0;margin-top: 1vh;margin-right:6%"
+                        class="button">
+                        Ajouter
+                    </button>
+                    <button (click)="openModal()"
+                        style=" padding: 0.876vw 4.818vw 0.876vw 4.818vw;margin: 0;margin-top: 1vh;" class="button">
+                        Modèle de relance Mail
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 83vw;"class="row">
+        <div *ngFor="let r of relances | filter:searchRelance;let i=index" style="max-width: 30%;margin-right: 2%;"class="card col-md-4">
+            <div class=row>
+                <div style="margin:0" class="col card-title">
+                    {{r.nom}}
+                </div>
+                <div style="text-align: right;" class="col">
+                    <div style="padding-right: 1.25rem;" class="form-check form-switch">
+                        <a (click)="setRelanceForm(r);relanceModal()"><span style="color:#b3b3b3" class="material-icons">
+                                edit
+                            </span></a>
+                    </div>
+
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="margin-left: 2vw;" class="row">
+                <div class="col">
+                    <div class="champs-name">
+                        Type
+                    </div>
+                    <div class="champs-contenur">
+                        {{r.type}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Modèle Mail
+                    </div>
+                    <div class="champs-contenur">
+                        {{r.modeleMail}}
+                    </div>
+                </div>
+                <hr style="background-color: #f6f6f8;height: 2px;margin-top:2%">
+                <div class="col-md-12">
+                    <div class="champs-name">
+                        (J-) Nb jour
+                    </div>
+                    <div class="champs-contenur">
+                        {{r.jour}}
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+
+        </div>
+    </div>
+</div>
+<!-- Relance ----------------------------------------------->
+<div id="relanceModal" class="modal display--5">
+    <div>
+        <div class="modal-content animated fadeIn">
+            <div style="margin:0;margin-top: 1%;">
+                <a (click)="closeModal()" style="float:right;padding-right: 12px"><span style="color:#b3b3b3"
+                        class="material-icons">
+                        clear
+                    </span></a>
+            </div>
+            <div class="modal-header-xlg">
+                <h5 style="padding:20px;padding-bottom: 0;margin-bottom: 0 !important;" class="modal-title display--3">
+                    Ajouter une relance</h5>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;margin-top:2%">
+            <form [formGroup]="relanceForm" (ngSubmit)="submitRelance()">
+                <div class="modal-body formcontainer">
+                    <div class="row">
+                        <div class="dropdown col col-md-4">
+                            <div class="row label"><label>Type <span style="color: red">*</span></label></div>
+                            <div class="row"><input type="text"
+                                    [ngClass]="{ 'is-invalid': submitted1 && g.type.errors }"
+                                    class="form-control input " formControlName="type" class="form-control input ">
+                            </div>
+                        </div>
+                        <div class="dropdown col col-md-4">
+                            <div class="row label"><label>Nom de la Relance<span style="color: red">*</span></label>
+                            </div>
+                            <div class="row"><input type="text" formControlName="nom"
+                                    [ngClass]="{ 'is-invalid': submitted1 && g.nom.errors }" class="form-control input "
+                                    class="form-control input ">
+                            </div>
+                        </div>
+                        <div class="dropdown col col-md-4">
+                            <div class="row label"><label>J - (jour)<span style="color: red">*</span></label></div>
+                            <div class="row"><input type="text" formControlName="jour"
+                                    [ngClass]="{ 'is-invalid': submitted1 && g.jour.errors }"
+                                    class="form-control input ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="dropdown col">
+                            <div class="row label"><label>Modèle Mail Relance</label>
+                            </div>
+                            <div class="row"><select formControlName="modeleMail" class="form-select input">
+                                    <option *ngFor="let m of mailModel" value="{{m}}">
+                                        {{m}}</option>
+                                </select></div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="background-color: #f6f6f8;height: 2px;margin-top:2%">
+                <div style="padding-left: 6.25rem;padding-top:2.34vh;max-width:74.5vw ;" class="row">
+                    <div style="padding-top:1.5rem" class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                            formControlName="actif" name="formationcheck" checked>
+                        <label style="padding-top: 0.5vh;" class="form-check-label" for="flexCheckChecked">
+                            Relance active
+                        </label>
+                    </div>
+                    <div class="col col-md-2">
+                        <button style="float: right;padding:0;margin-right:0" (click)="closeModal()" id="annuler"
+                            type="button" class="annuler button">Annuler</button>
+                    </div>
+                    <div *ngIf="!update" class="col col-md-2">
+                        <button style="float: right;padding:0;padding-left: 7%;padding-right:7%" type="button submit"
+                            class="button">Créer</button>
+                    </div>
+                    <div *ngIf="update" class="col col-md-2">
+                        <button style="margin-left:0;margin-right:0;float: right;padding:0;padding-left: 7%;padding-right:7%" type="button submit"
+                            class="button">Mise à jour</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Modele relance ------------------------------->
+<div id="relanceMailModal" class="modal display--5">
+    <div>
+        <div style="height:70vh !important" class="modal-content animated fadeIn">
+            <div style="margin:0;margin-top: 1%;">
+                <a (click)="closeModal()" style="float:right;padding-right: 12px"><span style="color:#b3b3b3"
+                        class="material-icons">
+                        clear
+                    </span></a>
+            </div>
+            <div class="modal-header-xlg">
+                <h5 style="padding:20px;padding-bottom: 0;margin-bottom: 0 !important;" class="modal-title display--3">
+                    Modèle MAIL Relance</h5>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;margin-top:2%">
+            <form [formGroup]="relanceMailForm" (ngSubmit)="submitMRelance()">
+                <div class="modal-body formcontainer">
+                    <div class="row">
+                        <div class="dropdown col col-md-4">
+                            <div class="row label"><label>Choisissez un modèle de mail</label></div>
+                            <div class="row"><input type="text" formControlName="modele" class="form-control input ">
+                            </div>
+
+                        </div>
+                        <div class="dropdown col col-md-4">
+                            <div class="row label"><label>Objet du mail<span style="color: red">*</span></label></div>
+                            <div class="row"><input type="text" formControlName="objet"
+                                    [ngClass]="{ 'is-invalid': submitted && f.objet.errors }"
+                                    class="form-control input ">
+                            </div>
+                            <div *ngIf="submitted && f.objet.errors" class="invalid-feedback">
+                                <div *ngIf="f.objet.errors.required">Remplir le chapms objet</div>
+                            </div>
+                        </div>
+                        <div class="dropdown col col-md-12">
+                            <div class="row label"><label>Description</label></div>
+                            <div class="row">
+                                <textarea rows="25" cols="80" style="height:200px !important" type="text"
+                                    class="form-control input" formControlName="description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr style="background-color: #f6f6f8;height: 2px;margin-top:2%">
+                <div style="padding-left: 6.25rem;padding-top:0;max-width:74.5vw ;" class="row">
+                    <div class="col-md-8"></div>
+                    <div class="col col-md-2">
+                        <button style="float: right;padding:0;margin-right:0" (click)="closeModal()" id="annuler"
+                            type="button" class="annuler button">Annuler</button>
+                    </div>
+                    <div *ngIf="!update" class="col col-md-2">
+                        <button style="float: right;padding:0;padding-left: 7%;padding-right:7%" type="button submit"
+                            class="button">Créer</button>
+                    </div>
+                    <div *ngIf="update" class="col col-md-2">
+                        <button style="float: right;padding:0;padding-left: 7%;padding-right:7%" type="button submit"
+                            class="button">Mise à jour</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

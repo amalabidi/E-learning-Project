@@ -1,0 +1,29 @@
+export class Formation{
+    _id : string
+    coutCertification:string=""
+    prestataireCertification:string="";
+    intituleCertification:string="";
+    UrlCertification:string="";
+    modalitePedagogique:string="";
+    type:string="";
+    Duree:string="";
+    environment:string="";
+    intitule:string="";
+    designation:string="";
+    referance:string="";
+    nombre_Heures:number;
+    tarif:number;
+    code_tarif:string="";
+    code_BFP:string="";
+    Url_formation:string="";
+    prestataire_Elearning:string="";
+    cout_Elearning:string="";
+    etat:Boolean=false;
+    Objectifs:string="";
+    Prerequis:string="";
+    resultats_attendus:string="";
+    public:string="";
+    contenu:string="";
+    certification:string="";
+    date_modif:Date;
+}

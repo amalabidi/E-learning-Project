@@ -1,0 +1,217 @@
+.inputFormmat{
+ font-size: 1.5rem;
+}
+.btn-group-lg>.btn, .btn-lg{
+    font-size: 0.8rem;
+}
+#annuler{
+    background: white;
+    border: 1px solid #e7eaec;
+    color:black;
+}
+#annuler:focus{
+    border-color: #f8ac59;
+    box-shadow: 0 0 0 0.25rem rgb(245 178 89 / 44%);
+}
+
+.checkbox-inline_myform, .radio-inline {
+    position: relative;
+    display: inline-block;
+    padding-right: 10px;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.rdio{
+    margin-right: 7px;
+}
+.text-success {
+    color: #32bc9b !important;
+}
+.text-darken-2{
+    font-weight: 600
+}
+.checkbox-inline{
+    padding:13%
+}
+.tabs__tab--active{
+ background: #ffffff !important
+}
+.tabs__tab{
+    background: linear-gradient( 180deg, #008af6, #0077d4);
+}
+.dropdown-menu{
+    top: 102%; 
+    display: none;
+    font-size: 1.5rem;
+    max-height: 330px;
+    overflow-y: scroll;
+    z-index:2
+}
+.mbadge{
+    position: absolute;
+    top: -6px;
+    left: 3vw;
+}
+
+  .checkbox-inline{
+      padding: 0
+  }
+  .searchInput{
+      width:35.387vw;
+  }
+  .container{
+    padding-left:13% !important;
+    padding-top: 7% !important;
+  }
+  .card{
+      margin-right: 1%;
+      max-width: 30.75%;
+  }
+  .main{
+    width: 84.416vw !important;
+  }
+  .champs-name{
+      margin-right:0
+  }
+  .material-icons{
+      font-size: 1.752vw;
+  }
+.label{
+    margin-top: 24px;
+    margin-bottom: 4px;
+}
+.modalFooter{
+    padding-left: 6.7vw !important;
+    position: absolute;
+    bottom: 0;
+    width: 74vw;
+}
+.button{
+    padding:0;
+    padding-left: 8%;
+    padding-right: 8%;
+    float: right;
+    margin-top: 12%;
+    margin-right: 0;
+
+}
+.annuler{
+    margin-right: 0;
+}
+.formcontainer{
+    max-height: 43.35vh !important;
+}
+.dropdown-menu{
+    width: 60vw;
+    left: 2%;
+}
+.form-check-input{
+    margin-right: 1vw;
+}
+.col>label{
+    padding-top: 5px;
+    margin-top: 0 !important;
+    margin-right:1%
+}
+.checkFact{
+    padding-top:3.5%;
+    padding-left:7%
+}
+.modal-content2{
+    height:65.79vh !important;
+    width:70.146vw !important;
+  }
+.text-center{
+    font-family: Poppins;
+  font-size: 1.022vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6e6e6e;
+}
+.tableau{
+    padding-left: 0;
+    max-width:79.5vw;
+}
+.tableau-head{
+  font-size: 0.9vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6e6e6e;
+}
+.tableau-body{
+  font-size: 1.022vw;
+  font-family: Poppins;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2c2c2c;
+}
+.case{
+  height: 50px;
+  text-align: left;
+  border: solid 1px #dde1e6;
+  border-bottom-color: #dde1e6 !important;
+  padding-left:0.75%
+}
+#tableHisto{
+    min-width: 174vw;
+    margin-bottom: 2%;
+    display: block;
+}
+.table-contain{
+    max-width:79.5vw;
+    overflow-x: scroll;
+}
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #efefef;
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height:10px;
+    border-radius: 5px;
+    padding:0
+}
+.icon-row{
+    padding-top: 0.6%;
+    padding-bottom: 0.5%;
+}
+.change-list{
+    max-width: 2.8vw;
+    margin-left:2%;
+    text-align:center;
+    padding:0;
+    padding-top:1.5%;
+    padding-bottom:1%;
+    opacity: 0.75;
+    border-radius: 8px;
+    background-color: #e8e8e8;
+}
+.list-title{
+    font-family: Poppins;
+    font-size: 1.46vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c2c2c;
+}

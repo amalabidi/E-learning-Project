@@ -1,0 +1,228 @@
+<!---------------------------------------New Design------------------------------------------->
+<div class="container">
+    <div>
+        <div class="page-title">
+            Informations administratives et techniques à votre CRM
+        </div>
+    </div>
+    <form [formGroup]="settingsForm" (ngSubmit)="updateSettings()">
+        <div style="width: 83.5vw;" class="row">
+            <div style="margin:0" class="col col-md-8 card">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <h3 class="text-succes"> Votre société </h3>
+                        <div class="row">
+                            <div class="col-md-4 form-group dropdown">
+                                <label>Représentant légal </label>
+                                <input class="form-control input" type="text" formControlName="representant"
+                                    id="representantLegal" autocomplete="nope">
+                            </div>
+                            <div class="col-md-4 form-group dropdown">
+                                <label>Société</label>
+                                <input class="form-control input" type="text" formControlName="societe" id="societe"
+                                    autocomplete="nope">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 form-group dropdown">
+                                <label>Téléphone</label>
+                                <input class="form-control input" type="text" formControlName="telephone" id="tel"
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col-md-4 form-group dropdown">
+                                <label>Mail</label>
+                                <input class="form-control input" type="mail" formControlName="mail" id="mail"
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col form-group dropdown">
+                                <label>Url</label>
+                                <input class="form-control input" type="text" formControlName="url" id="url"
+                                    autocomplete="nope">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group dropdown">
+                                <label>Adresse</label>
+                                <input class="form-control input" type="text" formControlName="adresse" id="adresse"
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col-md-3 form-group dropdown">
+                                <label>Code Postal</label>
+                                <input class="form-control input" type="text" formControlName="code_postal" id="zip"
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col-md-3 form-group dropdown">
+                                <label>Ville</label>
+                                <input class="form-control input" type="text" formControlName="ville" id="city"
+                                    autocomplete="nope">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 form-group dropdown">
+                                <label>Siret</label>
+                                <input class="form-control input" type="text" formControlName="siret" id="siret"
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col-md-3 form-group dropdown">
+                                <label>SAS</label>
+                                <input class="form-control input" type="text" formControlName="SAS" id="sas"
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col-md-3 form-group dropdown">
+                                <label>RCS</label>
+                                <input class="form-control input" type="text" formControlName="RCS" id="rcs" value=""
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col-md-3 form-group dropdown">
+                                <label>TVA infra</label>
+                                <input class="form-control input" type="text" formControlName="TVA_infra" id="tvaInfra"
+                                    autocomplete="nope">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 form-group dropdown">
+                                <label>N° Déclaration activité</label>
+                                <input class="form-control input" type="text" formControlName="NDeclaration_activite"
+                                    id="numActivite" autocomplete="nope">
+                            </div>
+                            <div class="col-md-3 form-group dropdown">
+                                <label>Code NAF</label>
+                                <input class="form-control input" type="text" formControlName="code_NAF" id="naf"
+                                    autocomplete="nope">
+                            </div>
+                            <div class="col form-group dropdown">
+                                <label>Forme Juridique</label>
+                                <input class="form-control input" type="text" formControlName="forme_juridique"
+                                    id="forme" autocomplete="nope">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 form-group dropdown">
+                                <label>Region</label>
+                                <input class="form-control input" type="text" formControlName="region" id="region"
+                                    autocomplete="nope">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin:0" class="col">
+                <div style="width: 22.416vw;margin:0;margin-bottom: 2vh;height: 254px;" class="ibox row card">
+                    <h3 class="text-succes"> Logo </h3>
+                    <div class="text-center">
+                        <img src="{{logo}}">
+                    </div>
+                </div>
+                <div style="width: 22.416vw;margin:0;height: 273px;" class="row card">
+                    <h3 class="text-succes"> Cachet </h3>
+                    <div class="text-center">
+                        <img src="{{cachet}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row card">
+            <h3 class="text-succes"> Vos banques </h3>
+            <div class="row">
+                <div>
+                    <h3 class="text-navy">Principale</h3>
+                </div>
+                <div class="col">
+                    <label>Nom Banque</label>
+                    <input class="form-control input" type="text" formControlName="nomprincip" id="banque" value=""
+                        autocomplete="nope">
+                </div>
+                <div class="col">
+                    <label>N° BIC</label>
+                    <input class="form-control input" type="text" formControlName="NBICprincip" id="bic" value="BIC : "
+                        autocomplete="nope">
+                </div>
+                <div class="col">
+                    <label>N° IBAN</label>
+                    <input class="form-control input" type="text" formControlName="NIBANprincip" id="iban"
+                        value="IBAN : " autocomplete="nope">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <h3 class="text-navy">Factor</h3>
+                </div>
+                <div class="col">
+                    <label>Nom Banque</label>
+                    <input class="form-control input" type="text" formControlName="nomfactor" id="FactorBanque" value=""
+                        autocomplete="nope">
+                </div>
+                <div class="col">
+                    <label>N° BIC</label>
+                    <input class="form-control input" type="text" formControlName="NBICfactor" id="FactorBic"
+                        value="BIC : " autocomplete="nope">
+                </div>
+                <div class="col">
+                    <label>N° IBAN</label>
+                    <input class="form-control input" type="text" formControlName="NIBANfactor" id="FactorIban"
+                        value="IBAN : " autocomplete="nope">
+                </div>
+            </div>
+        </div>
+        <div class="row card">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3 class="text-succes"> Vos Emails </h3>
+                    <div class="row">
+                        <h4 class="text-navy"> Email Communication </h4>
+                        <div class="col">
+                            <label>Port </label>
+                            <input class="form-control input" type="text" formControlName="portComm" id="port"
+                                autocomplete="nope">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Host </label>
+                            <input class="form-control input" type="text" formControlName="hostComm" id="host"
+                                autocomplete="nope">
+                        </div>
+                        <div class="col">
+                            <label>Login </label>
+                            <input class="form-control input" type="text" formControlName="loginComm" id="user"
+                                autocomplete="nope">
+                        </div>
+                        <div class="col">
+                            <label>Password </label>
+                            <input class="form-control input" type="text" formControlName="passwordComm" id="password"
+                                autocomplete="nope">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h4 class="text-navy"> Email Relance </h4>
+                        <div class="col">
+                            <label>Port </label>
+                            <input class="form-control input" type="text" formControlName="portRel" id="port1"
+                                autocomplete="nope">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Host </label>
+                            <input class="form-control input" type="text" formControlName="hostRel" id="host1"
+                                value="ssl0.ovh.net" autocomplete="nope">
+                        </div>
+                        <div class="col">
+                            <label>Login </label>
+                            <input class="form-control input" type="text" formControlName="loginRel" id="user1"
+                                autocomplete="nope">
+                        </div>
+                        <div class="col">
+                            <label>Password </label>
+                            <input class="form-control input" type="text" formControlName="passwordRel" id="password1"
+                                autocomplete="nope">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 79.416vw" class="row">
+            <div class="col"></div>
+            <div class="col" style="max-width: max-content; padding-right: 0;"><button type="button submit"
+                    class="button">Mettre à jour</button>
+            </div>
+        </div>
+    </form>
+</div>

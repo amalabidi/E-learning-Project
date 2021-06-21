@@ -1,0 +1,13 @@
+th{
+    background-color: inherit;
+    text-align: center;
+    border-width: 1px;
+    border-color: #e5ebed;
+}
+td{
+    color: #e5ebed;
+    text-align: center;
+    border-width: 1px;
+    border:inherit;
+    border-color: #e5ebed;
+}

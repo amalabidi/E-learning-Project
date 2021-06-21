@@ -1,0 +1,98 @@
+.title{
+    font-family: Poppins;
+  font-size: 2vw;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: center;
+  color: #32bc9b;
+}
+.cont{
+    overflow-y: hidden;
+    width: 100%;
+    height:100vh;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(to bottom,#32bc9b 17vw, #32bc9b ,#EAEDF6,#EAEDF6 8vw);
+    background-size: cover;
+}
+.content{
+    display: inline-block;
+    width: 36.058vw;
+    height: 40.146vw;
+   /* margin-top: 7.95vw;*/
+    /*margin: 7.956vw 31.825vw 3.358vw*/;
+    padding: 3.212vw 0 4.307vw;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+.input-label{
+    width: 75%;
+    margin-left: 5vw;
+    font-family: Poppins;
+  font-size: 1.022vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6a6a6a;
+}
+.input{
+    width: 25.693vw;
+    height: 3.212vw;
+    margin: 0.584vw 0 0;
+    padding: 0.876vw 9.562vw 0.876vw 1.168vw;
+    border-radius: 6px;
+    border: solid 2px #f5f5f5;
+
+    
+}
+
+.button{
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    width: 25.693vw;
+    height: 3.212vw;
+    margin: 2.19vw 5.182vw 3.066vw;
+    padding: 0.876vw 11.387vw 0.876vw 11.533vw;
+    border-radius: 4px;
+    background-color: #32bc9b;
+}
+.green-text{
+    font-family: Poppins;
+    font-size: 0.876vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #32bc9b !important;
+}
+.copyright{
+    margin: 3.358vw 40vw 0;
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #21292d;
+}
+.logo{
+    margin-top:3%;
+    margin-bottom:3%
+}

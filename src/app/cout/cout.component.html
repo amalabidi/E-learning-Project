@@ -1,0 +1,247 @@
+<!--<div class="container" style="padding-left: 0;max-width: inherit;">
+    <div class="main main--navigation">
+        <main class="catalog--view--height anchor--disabled">
+            <div id="catalog" class="catalog footer--pusher">
+                <div class="edof-tag">
+                    <section id="catalog-header-section-id" class="catalog__header">
+                        <div class="sticky--hidden">
+                            <div class="grid__row">
+                                <div class="grid__column column--6">
+                                    <h3 class="display--1 catalog__title"> Coûts </h3>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="overflow--hidden">
+                                    <h4
+                                        class="display--4 catalog__title float--left margin--zero-top margin--large-right">
+                                        Rechercher</h4>
+                                </div>
+                                <div class="edof-tag">
+                                    <section class="tabs">
+                                        <ul role="tablist">
+                                            <li role="tab" tabindex="0" id="by-training-name-tab" aria-selected="true"
+                                                class="tabs__tab tabs__tab--active"> Recherche
+                                                rapide </li>
+                                        </ul>
+                                        <div class="edof-tag">
+                                            <section role="tabpanel" id="by-training-name-panel"
+                                                aria-labelledby="by-training-name-tab" aria-hidden="false"
+                                                class="tabs__tabpanel tabs__tabpanel--active">
+                                                <form novalidate="">
+                                                    <div class="tagger tagger--icon-before tagger--icon-after"><span
+                                                            class="icon icon--32 color--neutral">search</span>
+                                                        <div class="tagger__content"><input [(ngModel)]="searchCout"
+                                                                type="text" formcontrol="searchByTrainingTitle"
+                                                                id="searchByTrainingTitle" name="searchByTrainingTitle"
+                                                                maxlength="255" placeholder="Recherche des Coûts"
+                                                                class="tagger__input width--full "
+                                                                ng-reflect-maxlength="255"></div><span
+                                                            class="icon color--accent-light cursor--pointer">arrow_forward</span>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sticky-filters" class="sticky--visible catalog__header__button">
+                            <a href="" class="button--link-accent">Haut de page <span
+                                    class="icon">arrow_upward</span></a>
+                        </div>
+                    </section>
+                    <div>
+                        <table style="padding: 1rem;
+                        z-index: 400;
+                        color: #e5ebed;
+                        background-color: #164194;
+                        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);">
+                            <thead>
+                                <tr>
+                                    <td>Total Montant</td>
+                                    <td>Total Coût E.Learning</td>
+                                    <td>Total Coût Certification</td>
+                                    <td>Total Coût 1</td>
+                                    <td>Total Coût 2</td>
+                                    <td>Total Coût Coach</td>
+                                    <td>Total Coût Vendeur</td>
+                                    <td>Total Coût</td>
+                                    <td>Total Coût Payé</td>
+                                    <td>Total Bénéfice</td>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>{{benefice}}</th>
+                                    <th>{{coutElearn}}</th>
+                                    <th>{{coutCertif}}</th>
+                                    <th>{{cout1}}</th>
+                                    <th>{{cout1}}</th>
+                                    <th>{{coutCoach}}</th>
+                                    <th>{{couVen}}</th>
+                                    <th>{{cout}}</th>
+                                    <th>{{coutpaye}}</th>
+                                    <th>{{benefice}}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <input type="hidden" value="0">
+                <div class="main__section text-align--center">
+                    <div>
+                        <section id="catalog-trainings-list-section-id" class="catalog__results row">
+                            <div class="row ng-star-inserted" style="margin-bottom: 3%;">
+                                <article style="margin-bottom: 2%;" *ngFor="let d of dossiers|filter:searchCout" class="user card">
+                                    <div>
+                                        <div class="card__header catalog-trainings-list-section-id__header">
+                                            <h5 class="cursor--pointer card__title"><a
+                                                    class="accordion__title">{{d.client.firstName}}
+                                                    {{d.client.lastName}}</a></h5><span
+                                                class="card__header__toolbar formation__status"
+                                                style="color: rgb(12, 192, 105);"> {{d.status}} </span>
+                                            <div class="card__subtitle">
+                                                <span class="color--primary-lighter">Numéro EDOF :
+                                                </span><strong>{{d.numeroEdOF}} </strong>
+                                            </div>
+                                            <div style="text-align: left;">
+                                                <div class="card__subtitle margin--small-top"><small
+                                                        class="color--primary-lighter"><strong
+                                                            style="font-weight: 900;">Vendeur :</strong>
+                                                        {{d.vendeur.name}} {{d.vendeur.lastname}}</small></div>
+                                                <div class="card__subtitle margin--small-top"><small
+                                                        class="color--primary-lighter"><strong
+                                                            style="font-weight: 900;">Provenance :</strong>
+                                                        {{d.provenance.provenance}}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="formation__content" style="text-align: left;">
+                                            <div class="formation__description__container column--7 column--medium-5"
+                                                style="text-align: left;">
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Montant :</strong>
+                                                                {{replaceNull(d.facturation.MontantFacture)}} €<em></em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Coût E.Learning :</strong>
+                                                                {{replaceNull(d.facturation.CoutElearning)}} €<em></em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Coût Certification
+                                                                    :</strong>
+                                                                {{replaceNull(d.facturation.CoutCertification)}} €<em></em>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Coût 1 :</strong>
+                                                                {{replaceNull(d.facturation.AutreCout1)}} €<em></em></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Coût 2 :</strong>
+                                                                {{replaceNull(d.facturation.AutreCout2)}} €<em></em></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Coût Coach :</strong>
+                                                                {{replaceNull(d.facturation.CoutCoach)}} €<em></em></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Coût Vendeur :</strong>
+                                                                {{replaceNull(d.facturation.CoutVendeur)}} €<em></em></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Total Coût :</strong>
+                                                                {{calculerTotalCout(d)}} €<em></em></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Total Coût Payé :</strong>
+                                                                {{replaceNull(null)}} €<em></em></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="ellipsis">
+                                                        <div class="ellipsis__content">
+                                                            <p class="formation__description"><strong
+                                                                    style="font-weight: 900;">Bénéfice :</strong>
+                                                                {{replaceNull(d.facturation.MontantFacture)}} €<em></em></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion">
+                                            <div class="accordion__content">
+                                                <div class="edof-tag"></div>
+                                                <section class="catalog__actions catalog__actions__z__index">
+                                                    <div class="edof-catalog__actions__add"><a
+                                                            class="button--link-accent"><span
+                                                                class="icon">add_circle</span><span>Ajouter une action
+                                                                de
+                                                                formation</span></a></div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                   
+                </div>
+            </div>
+        </main>
+    </div>
+</div>-->
+<div class="container">
+    <div>
+        <div class="page-title">
+            Coûts
+        </div>   
+    </div>
+  </div>

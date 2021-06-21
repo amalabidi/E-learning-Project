@@ -1,0 +1,71 @@
+.list{
+  width: 79.416vw;
+  padding-left: 2%;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+.list-header{
+    margin-top:1%;
+    margin:0
+}
+.nav-link{
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6e6e6e;
+}
+.nav-link.active{
+    border:hidden;
+    border-bottom: 4px solid;
+    border-bottom-color:#32bc9b;;
+    /*border-color: #dee2e6 #dee2e6 #fff;*/
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #32bc9b;
+    background-color: #fff;
+}
+.button{
+    width:fit-content;
+    /*height: 6.212vh;*/
+    margin: 3.46vh 1.168vw 0;
+    padding: 0.876vw 4.526vw;
+    border-radius: 4px;
+    background-color: #32bc9b;
+    outline: none !important;
+    border: 1px solid #32bc9b !important;
+
+}
+.searchInput{
+    margin: 3.5vh 1.168vw 0;
+}
+.annuler{
+    outline: none !important;
+    border: 1px solid #ffffff !important;
+}
+.row{
+    margin-left: 0vw;
+}
+.row>label {
+    padding-left: 0vw;
+}
+.modal-content2{
+    height:65.79vh !important;
+    width:70.146vw !important;
+  }
+#myModal2{
+    padding: 15.92vh 10.146vw !important;
+  }
+#myModal3{
+padding: 15.92vh 10.146vw !important;
+}
+
+.formcontainer2{
+padding-left: 5.7vw !important;
+margin-top: 5.4vh !important;
+}
+

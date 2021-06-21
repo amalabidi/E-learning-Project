@@ -1,0 +1,162 @@
+<div class="container">
+    <div>
+        <div class="page-title">
+            Tableau de bord
+        </div>
+    </div>
+    <div class="card-container">
+        <div style="padding-left: 16%;margin-bottom: 5%;"class=row>
+            <div style="max-width: fit-content;" class="col col-md-6">
+                <div class="card">
+                    <div class="card-title">
+                        Tous les dossiers
+                        <div class="icon">
+                            <span class="material-icons">
+                                class
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[1]?.totalCoutDossiers}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total>{{data[1]?.nombreTotalDossiers}}</span> dossiers</div>
+                    </div>
+                </div>
+
+            </div>
+            <div style="max-width: fit-content;" class="col col-md-6">
+                <div class="card">
+                    <div class="card-title">
+                        En Formation
+                        <div style="background-color:#e2e0ff" class="icon">
+                            <span  style="color:#6c63ff" class="material-icons">
+                                perm_contact_calendar
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[3]?.totalCoutEnFormation}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total>{{data[3]?.nombreTotalEnFormation}}</span> dossiers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=row>
+            <div style="max-width: fit-content;" class="col">
+                <div class="card">
+                    <div class="card-title">
+                        Entrée à faire
+                        <div  style="background-color:#f8d7da" class="icon">
+                            <span style="color:#dc3545"class="material-icons">
+                                alarm_on
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[2]?.totalCoutEntreeAFaire}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total>{{data[2]?.nombreTotalEntreeAFaire}}</span> dossiers</div>
+                    </div>
+                </div>
+
+            </div>
+            <div style="max-width: fit-content;" class="col">
+                <div class="card">
+                    <div class="card-title">
+                        A Evaluer
+                        <div style="background-color:#f8d7da"class="icon">
+                            <span style="color:#dc3545" class="material-icons">
+                                alarm_on
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[4]?.totalCoutAEvaluer}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total>{{data[4]?.nombreTotalAEvaluer}}</span> dossiers</div>
+                    </div>
+                </div>
+            </div>
+            <div style="max-width: fit-content;" class="col">
+                <div class="card">
+                    <div class="card-title">
+                        A Déclaré
+                        <div style="background-color:#f8d7da"class="icon">
+                            <span style="color:#dc3545"class="material-icons">
+                                alarm_on
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[5]?.totalCoutADeclarer}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total>{{data[5]?.nombreTotalADeclarer}}</span> dossiers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=row>
+            <div style="max-width: fit-content;" class="col">
+                <div class="card">
+                    <div class="card-title">
+                        Facturés
+                        <div style="background-color:#d6e8d9"class="icon">
+                            <span style="color:#318b40"class="material-icons">
+                                done_all
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[7]?.totalCoutFacturer}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total>{{data[7]?.nombreTotalFacturer}}</span> dossiers</div>
+                    </div>
+                </div>
+
+            </div>
+            <div style="max-width: fit-content;" class="col">
+                <div class="card">
+                    <div class="card-title">
+                        Payés
+                        <div style="background-color:#d6e8d9"class="icon">
+                            <span style="color:#318b40"class="material-icons">
+                                done_all
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[9]?.totalCoutPayer}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total> {{data[9]?.nombreTotalPayer}}</span> dossiers</div>
+                    </div>
+                </div>
+            </div>
+            <div style="max-width: fit-content;" class="col">
+                <div class="card">
+                    <div class="card-title">
+                        Déclaré
+                        <div style="background-color:#d6e8d9"class="icon">
+                            <span style="color:#318b40"class="material-icons">
+                                done_all
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 8%;" class='col total'>
+                            {{data[6]?.totalCoutDeclarer}}€
+                        </div>
+                        <div style="text-align: right;padding-right: 8%;"class="col label"><span class=total>{{data[6]?.nombreTotalDeclarer}}</span> dossiers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

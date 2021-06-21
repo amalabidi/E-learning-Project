@@ -1,0 +1,265 @@
+<!--<div class="container" style="padding-left:0;max-width: inherit;">
+    <div class="main main--navigation">
+        <main class="catalog--view--height anchor--disabled">
+            <div id="catalog" class="catalog footer--pusher">
+                <div class="edof-tag">
+                    <section id="catalog-header-section-id" class="catalog__header">
+                        <div class="sticky--hidden">
+                            <div class="grid__row">
+                                <div class="grid__column column--6">
+                                    <h3 class="display--1 catalog__title"> Provenance <span class="catalog__subtitle">
+                                            {{nb_prov}}
+                                            <span>provenances</span>
+                                            </span></h3>
+                                </div>
+                                <div class="grid__column column--2 catalog__title__aside" style="margin-left: 16rem;">
+                                    <button style="padding: 0;padding-top: 1rem;padding-bottom: 1rem"
+                                        (click)="openModal();" class="button--accent button--large" tabindex="0"><span
+                                            style="width:2.5rem" class="icon">add_circle</span><span
+                                            style="margin-left: 0">Ajouter</span></button></div>
+                            </div>
+                            <div>
+                                <div class="overflow--hidden">
+                                    <h4
+                                        class="display--4 catalog__title float--left margin--zero-top margin--large-right">
+                                        Rechercher</h4>
+                                    
+                                </div>
+                                <div class="edof-tag">
+                                    <section class="tabs">
+                                        <ul role="tablist">
+                                            <li role="tab" tabindex="0" class="tabs__tab tabs__tab--active"
+                                                id="by-training-name-tab" aria-selected="true"> Recherche
+                                                rapide </li>
+                                            
+                                        </ul>
+                                        <div class="edof-tag">
+                                            <section role="tabpanel" class="tabs__tabpanel tabs__tabpanel--active"
+                                                id="by-training-name-panel" aria-labelledby="by-training-name-tab"
+                                                aria-hidden="false">
+                                                <form novalidate="" class="ng-untouched ng-pristine ng-valid">
+                                                    <div class="tagger tagger--icon-before tagger--icon-after"><span
+                                                            class="icon icon--32 color--neutral">search</span>
+                                                        <div class="tagger__content"><input [(ngModel)]="searchProv"
+                                                                type="text" formcontrolname="searchByTrainingTitle"
+                                                                id="searchByTrainingTitle" name="searchByTrainingTitle"
+                                                                maxlength="255"
+                                                                class="tagger__input width--full ng-untouched ng-pristine ng-valid"
+                                                                placeholder="Recherche des provenances">
+                                                        </div><span
+                                                            class="icon color--accent-light cursor--pointer">arrow_forward</span>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                            
+                                        </div>
+
+                                    </section>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sticky-filters" class="sticky--visible catalog__header__button"><a href=""
+                                class="button--link-accent">Haut de page <span class="icon">arrow_upward</span></a>
+                        </div>
+                    </section>
+                </div>
+                <input type="hidden" value="0">
+                <div class="main__section text-align--center">
+                    <div>
+                        <section id="catalog-trainings-list-section-id" class="catalog__results">
+                            <div *ngFor="let p of provenances | filter:searchProv;let i=index">
+                                <article class="formation card" id="card0">
+                                    <div (click)="getFormerProv(p);getProvToUpdate(p)"class="card__header catalog-trainings-list-section-id__header">
+                                        <h5 class="cursor--pointer card__title"><a class="accordion__title"
+                                                >{{p.provenance}}</a></h5>
+                                        <span *ngIf="p.actif" class="card__header__toolbar formation__status"
+                                            style="color: rgb(12, 192, 105);"> Active </span>
+                                        <span *ngIf="!p.actif" class="card__header__toolbar formation__status"
+                                            style="color: rgba(211, 25, 25, 0.801);"> Inactive </span>
+                                        <div class="card__subtitle margin--small-top"><small
+                                                class="color--primary-lighter">Créée : {{AffichageFormateDateTime(p.creationDate)}}</small></div>
+                                        <div class="card__subtitle margin--small-top"><small
+                                                class="color--primary-lighter">Par :
+                                                {{p.user}}</small></div>
+                                        
+                                    </div>
+                                    <div class="card__footer">
+                                        <div class="formation__footer">
+                                            
+                                            <div class="formation__footer__cell text-align--center column--12">
+                                                <div class="dropdown"><span tabindex="0" class="dropdown__title">
+                                                        <span (click)="deleteProv(p)" class="dropdown__title__content">Supprimer
+                                                            Provenance</span><span
+                                                            class="icon dropdown__title__arrow">delete_forever</span></span>
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="accordion">
+                                            <div class="accordion__content">
+                                                <div class="edof-tag">
+                                                    
+                                                </div>
+                                                <section class="catalog__actions catalog__actions__z__index">
+                                                    <div class="edof-catalog__actions__add"><a
+                                                            class="button--link-accent"><span
+                                                                class="icon">add_circle</span><span>Ajouter une action
+                                                                de
+                                                                formation</span></a></div>
+                                                    
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </article>
+                                
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer--peek">
+                <app-prefooter>
+
+                </app-prefooter>
+                <app-footer class="edof-tag footer position--relative">
+                </app-footer>
+            </div>
+        </main>
+    </div>
+</div>
+-->
+<!---------------------------------------Modal--------------------------------------------->
+<div class="modal display--5">
+    <div class="modal-content">
+        <div style="margin:0">
+            <a (click)="closeModal()" style="float:right;padding-right: 12px"><span style="color:#b3b3b3"
+                    class="material-icons">
+                    clear
+                </span></a>
+        </div>
+        <div style="margin-top: 4.04vh;margin-left: 6.715vw;" class="modal-title">
+            Ajouter une Provenance
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <form [formGroup]="provForm">
+                    <div class="formcontainer">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row" style="margin-bottom: 1vh;"><label>Provenance<span
+                                            style="color: red">*</span></label>
+                                </div>
+                                <div class="row"><input type="text" formControlName="provenance"
+                                        class="form-control input ">
+                                </div>
+                            </div>
+                            <div style="padding-left: 2.25rem;margin-top: 2.5vh;" class="form-check"><input
+                                    type="checkbox" value="" id="flexCheckChecked" formControlName="actif"
+                                    name="formationcheck" checked="" class="form-check-input "><label
+                                    style="padding-top: 0.5vh;" for="flexCheckChecked"
+                                    class="form-check-label">Active</label></div>
+                        </div>
+                        <div style="margin-top: 14vh;" class="row">
+                            <div class="col"></div>
+                            <div class="col col-md-3"><button (click)="closeModal()" id="annuler" type="button"
+                                    class="button annuler">Annuler</button></div>
+                            <div *ngIf="!update" style="padding-right: 0;" class="col"><button
+                                    (click)="addProvenance();closeModal()" type="button submit"
+                                    [disabled]="!provForm.valid" style="padding-left: 2vw;padding-right: 2vw;"
+                                    class="button">Ajouter</button>
+                            </div>
+                            <div *ngIf="update" style="padding-right: 0;" class="col"><button
+                                    (click)="updateProv();closeModal()" type="button submit"
+                                    [disabled]="!provForm.valid" style="padding-left: 2vw;padding-right: 2vw;"
+                                    class="button">Modifier</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <img style="width:24.526vw"src="../../assets/prov.svg">
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------------Main------------------------------------->
+<div class="container">
+    <div>
+        <div class="page-title">
+            Provenances <i class="numberObj">{{nb_prov}} Provenances</i>
+        </div>
+    </div>
+    <div style="margin-bottom: 0;" class="list">
+        <div class="list-header">
+            <div class="row">
+                <div style="max-width: max-content;" class="col">
+                    <input [(ngModel)]="searchProv" style="margin:0;margin-top: 2%;" class="searchInput" type="text"
+                        placeholder="Recherche des Provenances…">
+                    <span style="position: absolute;
+                            top: 38%;
+                            left: 92%;;color: #c7c7c7;font-size: 1.8vw;" class="material-icons">
+                        search
+                    </span>
+                </div>
+                <div style="max-width: max-content;" class="col">
+                    <button (click)="openModal();"
+                        style=" padding: 0.876vh 4.818vw 0.876vh 3.818vw;margin: 0;margin-top: 3%;" class="button">
+                        Créer une nouvelle Provenance
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:2vh" class="main row">
+        <div *ngFor="let p of provenances | filter:searchProv;let i=index" class="card col-md-4">
+            <div class=row>
+                <div style="color: #6e6e6e;" class="col card-title">
+                    {{p.provenance}}
+                </div>
+                <div style="text-align: right;" class="col">
+                    <div style="padding-right: 1.25rem;" class="form-check form-switch">
+                        <input (click)="updateStatus(p,i)"class="form-check-input" type="checkbox" name="status{{i}}" id="flexSwitchCheckDefault" [checked]="p.actif">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="margin-left: 2vw;" class="row">
+                <div style="padding-left: 0.5vw;padding-right: 3vw;" class="col">
+                    <div class="champs-name">
+                        Créer
+                    </div>
+                    <div class="champs-contenur">
+                        {{AffichageFormateDateTime(p.creationDate)}}
+                    </div>
+                </div>
+                <div class="col" style="padding-left: 2.336vw;">
+                    <div class="champs-name">
+                        Par
+                    </div>
+                    <div class="champs-contenur">
+                        {{p.user}}
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="margin-left: 2vw;" class="row">
+                <div style="padding-left: 0.5vw;padding-right: 3vw;" class="col">
+                    <a><span (click)="deleteProv(p)" style="color:#b3b3b3" class="material-icons">
+                            delete
+                        </span></a>
+                </div>
+                <div style="padding-left: 2.336vw;" class="col">
+                    <button (click)="getFormerProv(p);getProvToUpdate(p)" class="modif-button">
+                        Modifier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

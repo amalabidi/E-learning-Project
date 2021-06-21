@@ -1,0 +1,25 @@
+<div style="padding-top: 1%;position: fixed;z-index: 2000;" class=" row header">
+    <div style="max-width: 10.666667%;"class="col col-md-2">
+        <img style="width: 8.102vw;"src="../../assets/ulogo2.webp">
+    </div>
+    <div class="vl"></div>
+    <div style="text-align: left;" class="col col-md-2">
+        <img class="logo" src="{{logo}}">
+    </div>
+    <div style="text-align: right;" class="col">
+        <div style="display: inline-flex;" class="row">
+            <div style="max-width: fit-content;" class="col">
+                <img class="avatar" src="../../assets/ahmed.jpg">
+            </div>
+            <div style="max-width:max-content" class="col">
+                <div class="username">{{lastname}}</div>
+                <div class="info">{{siret}} + {{region}}</div>
+            </div>
+            <div style="max-width:fit-content;margin-top: 2%;" class="col">
+                <a (click)="Logout()"routerLinkActive="active" routerLink="/login" class="navigation__link navigation__button"><span style="color: #6f7484;" class="material-icons">
+                        power_settings_new
+                    </span></a>
+            </div>
+        </div>
+    </div>
+</div>

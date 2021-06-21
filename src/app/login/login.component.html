@@ -1,0 +1,41 @@
+<div class=cont>
+	<div class="logo">
+		<img style="  width: 9.489vw;height: 4.234vw;"src="../../assets/ulogo3.webp">
+	</div>
+	<div class="content">
+		<div style="margin-bottom: 6%;">
+			<span class='title'>Login</span>
+		</div>
+		<div *ngIf="warning">
+			<div class='input-label'>
+				<span  style="color:red">* Votre email ou votre mot de passe est incorrect</span>
+			</div>
+		</div>
+		<form [formGroup]="LoginForm" (ngSubmit)="Login()">
+			<div style="margin-top:1.401vw">
+				<div class="row">
+					<label class="input-label">Addresse e-mail</label>
+				</div>
+				<input formControlName="email" id="username" name="username" class="input" tabindex="1"
+					placeholder="Adresse email" accesskey="i" type="text" value="" size="25" autocomplete="off">
+			</div>
+			<div style="margin-top:2.36vw;">
+				<div class="row">
+					<label class="input-label">Mot de passe</label>
+				</div>
+				<input formControlName="password" id="password" name="password" class="input" tabindex="2"
+					placeholder="Mot de passe" accesskey="m" type="password" value="" size="25" autocomplete="off"><span
+					id="capslock-on" style="display: none;"></span>
+			</div>
+			<div style="margin-top:2.19vw">
+				<button class="btn button submit">Login</button>
+			</div>
+		</form>
+		<div>
+			<a class="green-text">Mot de passe oublier?</a>
+		</div>
+	</div>
+	<div class="copyright">
+		All rights reserved © UREACHUS — 2021
+	</div>
+</div>

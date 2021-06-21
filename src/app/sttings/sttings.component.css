@@ -1,0 +1,54 @@
+label{
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6a6a6a;
+}
+.text-succes{
+    font-family: Poppins;
+    font-size: 1.168vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c2c2c;
+}
+.text-navy{
+    margin-top: 2vh;
+    margin-bottom:2vh;
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #32bc9b;
+}
+.card{
+    margin: 1.168vw 10.146vw 1.752vw 5.182vw;
+    padding: 1.46vw 2.336vw 1.752vw;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+.button{
+    margin:0;
+    float:right;
+}
+img{
+    border-radius: 8px;
+    border: solid 1px #f5f5f5;
+    width: 14.234vw;
+    height: 153px;
+}
+.container{
+    padding-top: 5rem !important;
+}

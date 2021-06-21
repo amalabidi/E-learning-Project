@@ -1,0 +1,65 @@
+<div class="area"></div>
+<nav style="overflow-y: scroll;overflow-x: hidden;" class="main-menu">
+    <ul>
+        <li (click)='getEvent(0)'*ngIf="Amenu[0]?.acces"><a routerLink="/tableau-de-bord" routerLinkActive="active"><span id="0" class="material-icons">
+            home
+            </span>
+                <span class="nav-text">Tableau de bord</span>
+            </a>
+        </li>
+        <li (click)='getEvent(1)'*ngIf="Amenu[1]?.acces"><a routerLinkActive="active" routerLink="/dossier"><span id="1"class="material-icons">
+            folder
+            </span><span class="nav-text">Dossiers</span>
+            </a>
+        </li>
+        <li (click)='getEvent(2)'*ngIf="Amenu[2]?.acces"><a routerLinkActive="active" routerLink="/planning"><span id="2"class="material-icons">
+                    event_note </span><span class="nav-text">Planning </span></a>
+        </li>
+        <li (click)='getEvent(3)'*ngIf="Amenu[3]?.acces"><a routerLinkActive="active" routerLink="/provenance"><span id="3"class="material-icons">
+                    room </span><span class="nav-text">Provenance </span></a>
+        </li>
+        <li (click)='getEvent(4)'*ngIf="Amenu[4]?.acces"><a routerLinkActive="active" routerLink="/suivi-modification"><span id="4"class="material-icons">
+            access_time
+            </span>
+            <span class="nav-text"> Suivi Modifications </span></a>
+        </li>
+        <li (click)='getEvent(5)'*ngIf="Amenu[5]?.acces"><a routerLinkActive="active" routerLink="/utilisateur"><span id="5"class="material-icons">
+                    account_circle </span><span class="nav-text">Utilisateurs</span> </a>
+        </li>
+        <li (click)='getEvent(6)'*ngIf="Amenu[6]?.acces"><a routerLinkActive="active" routerLink="/formation"><span id="6"class="material-icons">
+            school
+            </span><span class="nav-text">Formation</span>
+            </a>
+        </li>
+        <li (click)='getEvent(7)'*ngIf="Amenu[7]?.acces"><a routerLinkActive="active" routerLink="/bpf"><span id="7"class="material-icons">
+                    copyright </span><span class="nav-text"> BPF</span>
+            </a>
+        </li>
+        <li (click)='getEvent(8)'*ngIf="Amenu[8]?.acces"><a routerLinkActive="active" routerLink="/couts"><span id="8"class="material-icons">
+                    euro_symbol </span><span class="nav-text"> Coûts</span> </a>
+        </li>
+        <li (click)='getEvent(9)'*ngIf="Amenu[9]?.acces"><a routerLinkActive="active" routerLink="/import-leads"><span id="9"
+                    class="material-icons"> cloud_download </span><span class="nav-text">Import Leads</span> </a>
+        </li>
+        <li (click)='getEvent(10)'*ngIf="Amenu[10]?.acces"><a routerLinkActive="active" routerLink="/import-ipbx"><span id="10"
+                    class="material-icons"> cloud_download </span><span class="nav-text">Import IPBX</span>
+            </a>
+        </li>
+        <li (click)='getEvent(11)'*ngIf="Amenu[11]?.acces"><a routerLinkActive="active" routerLink="/compteur"><span id="11"class="material-icons">
+                    shuffle </span>
+                <span class="nav-text"> Comptreurs</span>
+            </a>
+        </li>
+        <li (click)='getEvent(13)'*ngIf="Amenu[13]?.acces"><a routerLinkActive="active" routerLink="/relance"><span id="13"class="material-icons">
+                    track_changes </span>
+                <span class="nav-text">Relances</span>
+            </a>
+        </li>
+        <li (click)='getEvent(12)'*ngIf="Amenu[12]?.acces"><a routerLinkActive="active" routerLink="/parametre"><span id="12" class="material-icons">
+            settings
+            </span>
+                <span class="nav-text">Paramètres</span>
+            </a>
+        </li>
+    </ul>
+</nav>

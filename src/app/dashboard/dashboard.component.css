@@ -1,0 +1,63 @@
+.container{
+    padding-top:7% !important;
+    padding-right: 0 !important;
+    padding-left: 10% !important;
+}
+.card{
+    width: 25.693vw;
+    height: 9.321vw;
+}
+.card-container{
+    padding-right: 3%;
+    padding-top: 6%;
+}
+.card-title{
+    margin: 0.584vw 8.175vw 1.533vw 2.1vw;
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6f7484;
+  
+}
+.material-icons{
+    color: #2680eb;
+    padding: 5%;
+}
+.icon{
+    width: 2.117vw;
+    height: 2.117vw;
+    margin: 0 0 1.46vw 11.752vw;
+    padding: 6.0.292vw 8.0.073vw 6.0.292vw 8.0.073vw;
+    background-color: #d4e6fb;
+    border-radius: 50%;
+    position: absolute;
+    left: 43%;
+    top: 21%;
+}
+.total{
+    font-family: Poppins;
+    font-size: 1.752vw;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4b4b4b;
+}
+.label{
+    font-family: Poppins;
+    font-size: 1.022vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6f7484;
+}

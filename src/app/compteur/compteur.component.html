@@ -1,0 +1,51 @@
+<div class="container">
+    <div>
+        <div class="page-title">
+            Compteurs
+        </div>
+        <div style="margin-bottom: 0;" class="list">
+            <div class="list-header">
+                <div class="row">
+                    <div style="margin-top: 2%;padding-left: 0;padding-right: 3%;">
+                        <form [formGroup]="coutForm" (ngSubmit)="submit()">
+                            <div class="row">
+                                <div style="padding-left: 0;margin-bottom:2%" class="col col-md-6">
+                                    <div>
+                                        <label style="color: #6e6e6e;margin:0;padding-left: 0;padding-bottom: 3%;"
+                                            class="nav-link">Consommation des signatures</label>
+                                        <div class=row>
+                                            <div style="padding-left:0" class="col col-md-5">
+                                                <input formControlName="beginDate" class="input" placeholder="Du"
+                                                    onfocus="(this.type='date')" onfocusout="(this.type='text')"
+                                                    type="text">
+                                            </div>
+                                            <div class="col col-md-5">
+                                                <input formControlName="endDate" class="input" placeholder="Au"
+                                                    onfocus="(this.type='date')" onfocusout="(this.type='text')"
+                                                    type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr style="background-color: #f6f6f8;height: 2px;margin-top:2%;">
+                                <div class="signature">
+                                    <span>{{nb_sign}}</span>
+                                </div>
+                                <div class="signature">
+                                    <span>Signatures</span>
+                                </div>
+                                <hr style="background-color: #f6f6f8;height: 2px;margin-top:3%;margin-bottom:3%">
+                                <div style="padding-top: 0.5%;text-align: center;"class="col col-md-12">
+                                    <button  style="margin-left: 2%;margin-top:1%" class="button">
+                                        Obtenir des informations sur votre consommation de signatures
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

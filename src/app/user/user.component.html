@@ -1,0 +1,407 @@
+<!--<div class="container" style="padding-left: 0;">
+    <div class="main main--navigation">
+        <main class="catalog--view--height anchor--disabled">
+            <div id="catalog" class="catalog footer--pusher">
+                <div class="edof-tag">
+                    <section id="catalog-header-section-id" class="catalog__header">
+                        <div class="sticky--hidden">
+                            <div class="grid__row">
+                                <div class="grid__column column--6">
+                                    <h3 class="display--1 catalog__title"> Utilisateur <span class="catalog__subtitle">
+                                            {{nb_users}} <span>utilisateurs</span></span></h3>
+                                </div>
+                                <div class="grid__column column--2 catalog__title__aside"><button
+                                        (click)="openModal();createDropdown()" tabindex="0"
+                                        class="button--accent button--large"
+                                        style="padding: 0; padding-top: 1rem; padding-bottom: 1rem;"><span class="icon"
+                                            style="width: 2.5rem;">add_circle</span><span
+                                            style="margin-left: 0;">Ajouter</span></button></div>
+                                <div class="grid__column column--2 catalog__title__aside"><button tabindex="0"
+                                        class="button--accent button--large"
+                                        style="padding: 1rem; width:fit-content"><span class="icon"
+                                            style="width: 2.5rem;">message</span><span style="margin-left: 0;">Envoyer
+                                            message</span></button></div>
+                            </div>
+                            <div>
+                                <div class="overflow--hidden">
+                                    <h4
+                                        class="display--4 catalog__title float--left margin--zero-top margin--large-right">
+                                        Rechercher</h4>
+                                </div>
+                                <div class="edof-tag">
+                                    <section class="tabs">
+                                        <ul role="tablist">
+                                            <li role="tab" tabindex="0" id="by-training-name-tab" aria-selected="true"
+                                                class="tabs__tab tabs__tab--active"> Recherche
+                                                rapide </li>
+                                        </ul>
+                                        <div class="edof-tag">
+                                            <section role="tabpanel" id="by-training-name-panel"
+                                                aria-labelledby="by-training-name-tab" aria-hidden="false"
+                                                class="tabs__tabpanel tabs__tabpanel--active">
+                                                <form novalidate="">
+                                                    <div class="tagger tagger--icon-before tagger--icon-after"><span
+                                                            class="icon icon--32 color--neutral">search</span>
+                                                        <div class="tagger__content"><input [(ngModel)]="searchUser"
+                                                                type="text" formcontrol="searchByTrainingTitle"
+                                                                id="searchByTrainingTitle" name="searchByTrainingTitle"
+                                                                maxlength="255" placeholder="Recherche des Utilisateurs"
+                                                                class="tagger__input width--full "
+                                                                ng-reflect-maxlength="255"></div><span
+                                                            class="icon color--accent-light cursor--pointer">arrow_forward</span>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sticky-filters" class="sticky--visible catalog__header__button">
+                            <a href="" class="button--link-accent">Haut de page <span
+                                    class="icon">arrow_upward</span></a></div>
+                    </section>
+                </div><input type="hidden" value="0">
+                <div class="main__section text-align--center">
+                    <div>
+                        <section style="text-align: center" id="catalog-trainings-list-section-id"
+                            class="catalog__results row">
+                            <div class="col" style="max-width:33%;margin-bottom: 3%;"
+                                *ngFor="let u of users | filter:searchUser;let i=index">
+                                <article id="card{{i}}" class="user card ">
+                                    <div style="height: 38vh;" (click)="getFormerUser(u);getUserToUpdate(u);openModal()"
+                                        class="card__header catalog-trainings-list-section-id__header">
+                                        <h5 class="cursor--pointer card__title"><a class="accordion__title">{{u.name}}
+                                                {{u.lastname}}</a></h5>
+                                        <div class="card__subtitle"><span class="color--primary-lighter">Email :
+                                            </span><strong>{{u.email}}
+                                            </strong></div>
+                                        <div class="card__subtitle margin--small-top"><small
+                                                class="color--primary-lighter">Hiérarchie :
+                                                {{u.habilitation}}</small></div>
+                                        <div class="card__subtitle margin--small-top"><small
+                                                class="color--primary-lighter">Accès : :
+                                                {{u.permissions}}</small></div>
+                                    </div>
+                                    <div class="formation__content">
+                                        <div
+                                            class="formation__details__container column--5 column--medium-3 vertical-align--top">
+                                            <div label="operations">
+                                                <div class="formation__details text-align--left">
+                                                    <div><small class="color--primary-lighter">Dernière modification :
+                                                        </small></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__footer">
+                                        <div class="formation__footer">
+                                            <div class="formation__footer__cell text-align--center column--12">
+                                                <div (click)="deleteUser(u)" class="dropdown"><span tabindex="0"
+                                                        class="dropdown__title"><span
+                                                            class="dropdown__title__content">Supprimer
+                                                            Utilisateur</span><span
+                                                            class="icon dropdown__title__arrow">delete_forever</span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion">
+                                            <div class="accordion__content">
+                                                <div class="edof-tag"></div>
+                                                <section class="catalog__actions catalog__actions__z__index">
+                                                    <div class="edof-catalog__actions__add"><a
+                                                            class="button--link-accent"><span
+                                                                class="icon">add_circle</span><span>Ajouter une action
+                                                                de
+                                                                formation</span></a></div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="footer--peek">
+                <app-prefooter></app-prefooter>
+                <app-footer class="edof-tag footer position--relative"></app-footer>
+            </div>
+        </main>
+    </div>
+</div>
+-->
+<!----------------------------------------model1---------------------------------------------------------->
+<div id='myModal' class="modal display--5">
+    <div class="modal-content">
+        <div style="margin:0">
+            <a (click)="closeModal()"style="float:right;padding-right: 12px"><span style="color:#b3b3b3"class="material-icons">
+                clear
+                </span></a>
+        </div>
+        <div style="margin-top: 4.04vh;margin-left: 6.715vw;"class="modal-title">
+            Ajouter un utilisateur
+        </div>
+        <form [formGroup]="userForm">
+            <div class="formcontainer">
+                <div class="row" style="margin-bottom:2vh">
+                    <div class="col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Nom<span style="color: red">*</span></label>
+                        </div>
+                        <div class="row"><input type="text" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"formControlName="name" class="form-control input ">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Prénom<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><input type="text" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"formControlName="lastname" class="form-control input ">
+                        </div>
+                    </div>
+                    <div class="dropdown col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Email<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><input type="text"[ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email" class="form-control input ">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:2vh">
+                    <div class="dropdown col col-md-4">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Mobile</label></div>
+                        <div class="row"><input type="text" formControlName="mobile" class="form-control input ">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Société</label></div>
+                        <div class="row"><input type="text" formControlName="company" class="form-control input "></div>
+                    </div>
+                </div>
+                <hr style="background-color: #f6f6f8;height: 2px;margin: 3%;">
+                <div class="row" style="margin-bottom:2vh">
+                    <div class="dropdown col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Mot de passe</label></div>
+                        <div class="row"><input type="password" formControlName="password" class="form-control input ">
+                        </div>
+                    </div>
+                    <div class="dropdown col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Confirmation<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><input type="password" class="form-control input "></div>
+                    </div>
+
+                </div>
+                <div class="row" style="margin-bottom:2vh">
+                    <div class="dropdown col col-md-9">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Habilitation<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><select (click)="verifCoachVen();" [ngClass]="{ 'is-invalid': submitted && f.habilitation.errors }"formControlName="habilitation"
+                                id="habilitation" class="form-select input ">
+                                <option *ngFor="let h of Hab;let i=index" value="{{h}}">
+                                    {{h}}</option>
+                            </select></div>
+                    </div>
+                    <div style="padding-left: 4vw;padding-right: 0;" class=col>
+                        <div style="padding-top: 3.3vh;" class="form-check"><input type="checkbox" value=""
+                                id="flexCheckChecked" formControlName="authorisedConnection" name="formationcheck"
+                                checked="" class="form-check-input "><label for="flexCheckChecked"
+                                style="margin-top: 0.4vh;" class="form-check-label"> Connexion
+                                Autorisé </label></div>
+                    </div>
+                </div>
+                <div *ngIf="isVender" class="row">
+                    <div class="dropdown col" style="max-width: 25%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Tarif Vendeur</label></div>
+                        <div class="row"><input type="number" formControlName="tarif" class="form-control input ">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="margin-bottom: 3%;"><label>Type tarif vendeur</label></div>
+                        <div class="row">
+                            <div class="col" style="max-width: max-content;">
+                                <input type="radio" value="fixe" formControlName="typeTarif" checked>
+                                <label style="padding-left: 7px;">Fixe</label>
+                            </div>
+                            <div class="col" style="max-width: max-content;">
+                                <input type="radio" value="pourcentage" formControlName="typeTarif">
+                                <label style="padding-left: 7px;">Pourcentage</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="isCoach" class="row">
+                    <div class="dropdown col" style="max-width: 25%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Tarif Formateur</label></div>
+                        <div class="row"><input type="number" formControlName="tarif" class="form-control input ">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="margin-bottom: 3%;"><label>Type tarif formateur</label></div>
+                        <div class="row">
+                            <div class="col" style="max-width: max-content;">
+                                <input type="radio" formControlName="typeTarif" value="fixe" checked>
+                                <label style="padding-left: 7px;">Fixe</label>
+                            </div>
+                            <div class="col" style="max-width: max-content;">
+                                <input type="radio" formControlName="typeTarif" value="pourcentage">
+                                <label style="padding-left: 7px;">Pourcentage</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="background-color: #f6f6f8;height: 2px;margin: 3%;">
+                <div class='row' style="margin-bottom: 2vh;">
+                    <div class="col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Permissions (Accés menu)</label>
+                        </div>
+                        <div class="row">
+                            <ng-multiselect-dropdown style="padding:0" [placeholder]="'Permissions'" [settings]="dropdownSettings"
+                                [data]="Amenu" formControlName="permissions" (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                    <div class="dropdown col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Sous Permissions (Accés dossier)</label>
+                        </div>
+                        <div class="row">
+                            <ng-multiselect-dropdown style="padding:0" [placeholder]="'custom placeholder'" [settings]="dropdownSettings"
+                                [data]="Adossier" formControlName="secondaryPermissions"
+                                (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                    <div *ngIf="!isCoach" class="dropdown col">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Provenances</label></div>
+                        <div class="row">
+                            <ng-multiselect-dropdown style="padding:0"[placeholder]="'custom placeholder'" [settings]="dropdownSettings"
+                                [data]="provenances" formControlName="provenances" (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 2vh;">
+                    <div *ngIf="!isCoach" class="dropdown col col-md-4">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Utilisateurs</label></div>
+                        <div class="row">
+                            <ng-multiselect-dropdown style="padding:0"[placeholder]="'custom placeholder'" [settings]="dropdownSettings"
+                                [data]="usersName" formControlName="users" (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                    <div class="dropdown col col-md-4">
+                        <div class="row" style="margin-bottom: 1vh;"><label>Actions groupées</label></div>
+                        <div class="row">
+                            <ng-multiselect-dropdown style="padding:0"[placeholder]="'custom placeholder'" [settings]="dropdownSettings"
+                                [data]="AGroupe" formControlName="groupedActions" (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div style="margin-top:3vh"class="row">
+        <div class="col"></div>
+        <div class="col col-md-6">
+            <button (click)="closeModal()" id="annuler"
+                type="button" style="border:none !important"class="button annuler">Annuler</button>
+            <button *ngIf="!update"
+                (click)="addUser()" type="button submit"
+                class="button">Créer</button>
+            <button *ngIf="update" (click)="updateUser()" type="button submit"
+                class="button">Modifier</button>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+<!------------------------------------------Main------------------------------------------->
+<div class="container">
+    <div>
+        <div class="page-title">
+            Listes des utilisateurs <i class="numberObj">{{nb_users}} Utilisateurs</i>
+        </div>
+    </div>
+    <div class="list">
+        <div class="list-header">
+            <div class="row">
+                <div style="max-width: max-content;" class="col">
+                    <input [(ngModel)]="searchUser" style="margin:0;margin-top: 1vh;" class="searchInput" type="text"
+                        placeholder="Recherche des Utilisateurs…">
+                    <span style="position: absolute;
+                            top: 31%;
+                            left: 92%;;color: #c7c7c7;font-size: 1.8vw;" class="material-icons">
+                        search
+                    </span>
+                </div>
+                <div style="max-width: max-content;" class="col">
+                    <button (click)="openModal();createDropdown()"
+                        style=" padding: 0.876vw 4.818vw 0.876vw 4.818vw;margin: 0;margin-top: 1vh;" class="button">
+                        Créer un nouveau Utilisateur
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div *ngFor="let u of users | filter:searchUser;let i=index" class="card">
+            <div class=row>
+                <div class="col card-title">
+                    {{u.name}} {{u.lastname}}
+                </div>
+                <div style="text-align: right;" class="col">
+                    <div style="padding-right: 1.25rem;" class="form-check form-switch">
+                        <a><span (click)="getFormerUser(u);getUserToUpdate(u);openModal()" style="color:#b3b3b3" class="material-icons">
+                            edit
+                            </span></a>
+                        <a><span (click)="deleteUser(u)" style="margin-left: 2vw;color:#b3b3b3" class="material-icons">
+                                delete
+                            </span></a>
+                    </div>
+
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="margin-left: 2vw;padding-left: 2.336vw;" class="row">
+                <div class="col">
+                    <div class="champs-name">
+                        Email
+                    </div>
+                    <div class="champs-contenur">
+                        {{u.email}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Dernière modification
+                    </div>
+                    <div class="champs-contenur">
+                        {{AffichageFormateDateTime(u.updatedAt)}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Hiérarchie
+                    </div>
+                    <div class="champs-contenur">
+                        {{u.habilitation}}
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="margin-left: 2vw;padding-left: 2.336vw;" class="row">
+                <div class="col">
+                    <div class="champs-name">
+                        Accès
+                    </div>
+                    <div class="champs-contenur">
+                        {{u.permissions}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

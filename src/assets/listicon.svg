@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+    <defs>
+        <style>
+            .cls-1{fill:#6f7484;stroke:#ebebeb}.cls-5{fill:none}.cls-4{stroke:none}
+        </style>
+    </defs>
+    <g id="Group_1241" transform="translate(-8 -12)">
+        <g id="Rectangle_199" class="cls-1">
+            <path d="M0 0H24V16H0z" class="cls-4" transform="translate(8 12)"/>
+            <path d="M0.5 0.5H23.5V15.5H0.5z" class="cls-5" transform="translate(8 12)"/>
+        </g>
+        <g id="Rectangle_200" class="cls-1">
+            <path d="M0 0H24V9H0z" class="cls-4" transform="translate(8 16)"/>
+            <path d="M0.5 0.5H23.5V8.5H0.5z" class="cls-5" transform="translate(8 16)"/>
+        </g>
+        <g id="Rectangle_202" fill="none" stroke="#ebebeb">
+            <path d="M0 0H10V16H0z" class="cls-4" transform="translate(15 12)"/>
+            <path d="M0.5 0.5H9.5V15.5H0.5z" class="cls-5" transform="translate(15 12)"/>
+        </g>
+        <g id="Rectangle_201" fill="#fff" stroke="#ebebeb" transform="translate(8 20)">
+            <path d="M0 0H24V1H0z" class="cls-4"/>
+            <rect width="23" x=".5" y=".5" class="cls-5"/>
+        </g>
+    </g>
+</svg>

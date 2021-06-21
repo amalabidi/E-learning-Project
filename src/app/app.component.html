@@ -1,0 +1,5 @@
+<app-navbar *ngIf="showMenu"></app-navbar>
+<app-sidenav *ngIf="showMenu"></app-sidenav>
+<main [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</main>

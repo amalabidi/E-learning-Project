@@ -1,0 +1,47 @@
+.card{
+    margin-right: 1.3vw;
+    max-width: 30.333333% !important;
+  }
+  .card-title{
+    margin: 0 0.584vw 1vh 0.336vw;
+    padding: 0;
+  }
+  .container{
+    padding-left: 13% !important;
+    padding-right:7% !important;
+    padding-top:9vh !important;
+  }
+  .list{
+    padding: 1.46vw 1.168vw;
+    margin-bottom: 9.3vh;
+  }
+  .tableau{
+      padding-left: 0;
+      width:80.5vw;
+  }
+  .tableau-head{
+    font-size: 0.9vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6e6e6e;
+  }
+  .tableau-body{
+    font-size: 1.022vw;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6e6e6e;
+  }
+  .case{
+    border: solid 1px #dde1e6;
+    border-bottom-color: #dde1e6 !important;
+  }
+
+  

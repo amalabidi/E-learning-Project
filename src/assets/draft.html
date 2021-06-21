@@ -1,0 +1,184 @@
+<div id='myModal' class="modal display--5">
+    <div class="modal-content" style="margin-top: 9%; height: 82%;">
+        <div class="row" style="margin-top: 2%; margin-left: 3%;">
+            <h4 class="display--3">Ajouter un utilisateur</h4>
+        </div>
+        <div class="row" style="margin: 1%;">
+        </div>
+        <form>
+            <div class="formcontainer" style="margin-left: 5%; max-width: 90%;margin-top: 3%">
+                <div class="row" style="margin-bottom: 2%; margin-left: 2%;">
+                    <div class="col" style="max-width: 25%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Nom<span style="color: red">*</span></label>
+                        </div>
+                        <div class="row"><input type="text" formcontrolname="nom" class="form-control inputFormmat ">
+                        </div>
+                    </div>
+                    <div class="col" style="max-width: 25%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Prénom<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><input type="text" formcontrolname="intitule"
+                                class="form-control inputFormmat "></div>
+                    </div>
+                    <div class="dropdown col" style="max-width: 25%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Permissions (Accés menu)</label>
+
+                        </div>
+                        <div class="row"><select formcontrolname="permission" class="form-select inputFormmat ">
+                                <option value="Bureautique">
+                                    Bureautique </option>
+
+                            </select></div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 2%; margin-left: 2%;">
+                    <div class="dropdown col" style="max-width: 56%;">
+                        <div class="row" style="margin-bottom: 1%;"><label>Email<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><input type="text" formcontrolname="email" class="form-control inputFormmat ">
+                        </div>
+                    </div>
+                    <div class="dropdown col" style="max-width: 25%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Sous Permissions (Accés dossier)</label>
+
+                        </div>
+                        <div class="row"><select formcontrolname="souspermission" class="form-select inputFormmat ">
+                                <option value="Bureautique">
+                                    Bureautique </option>
+
+                            </select></div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 2%;">
+                    <div class="dropdown col" style="max-width: 25%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Mobile</label></div>
+                        <div class="row"><input type="text" formcontrolname="mobile" class="form-control inputFormmat ">
+                        </div>
+                    </div>
+                    <div class="col" style="max-width: 25%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Société</label></div>
+                        <div class="row"><input type="text" formcontrolname="societe"
+                                class="form-control inputFormmat "></div>
+                    </div>
+                    <div class="dropdown col" style="max-width: 25%; margin-bottom: 2%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Provenances</label></div>
+                        <div class="row"><select formcontrolname="provenance" class="form-select inputFormmat ">
+                                <option>Tarif 1</option>
+                                <option>Tarif 2</option>
+                                <option>Tarif 3</option>
+                            </select></div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 2%; margin-left: 2%;">
+                    <div class="dropdown col" style="max-width: 25%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Mot de passe</label></div>
+                        <div class="row"><input type="text" formcontrolname="password"
+                                class="form-control inputFormmat "></div>
+                    </div>
+                    <div class="dropdown col" style="max-width: 25%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Confirmation<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><input type="text" formcontrolname="cpassword"
+                                class="form-control inputFormmat "></div>
+                    </div>
+                    <div class="dropdown col" style="max-width: 25%; margin-bottom: 2%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Utilisateurs</label></div>
+                        <div class="row"><select formcontrolname="utilisateur" class="form-select inputFormmat ">
+                                <option>Tarif 1</option>
+                                <option>Tarif 2</option>
+                                <option>Tarif 3</option>
+                            </select></div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 2%; margin-left: 2%;">
+                    <div class="dropdown col" style="max-width: 56%; margin-bottom: 2%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Habiliations<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><select formcontrolname="habiliation" class="form-select inputFormmat ">
+                                <option>Tarif 1</option>
+                                <option>Tarif 2</option>
+                                <option>Tarif 3</option>
+                            </select></div>
+                    </div>
+                    <div class="dropdown col" style="max-width: 25%; margin-bottom: 2%; margin-left: 6%;">
+                        <div class="row" style="margin-bottom: 3%;"><label>Actions groupées<span
+                                    style="color: red">*</span></label></div>
+                        <div class="row"><select formcontrolname="action" class="form-select inputFormmat ">
+                                <option>Tarif 1</option>
+                                <option>Tarif 2</option>
+                                <option>Tarif 3</option>
+                            </select></div>
+                    </div>
+                </div>
+                <div class="form-check" style="padding-left: 3em;"><input type="checkbox" value="" id="flexCheckChecked"
+                        formcontrolname="etat" name="formationcheck" checked="" class="form-check-input "><label
+                        for="flexCheckChecked" class="form-check-label"> Connexion Autorisé </label></div>
+            </div>
+            <div class="row" style="max-width: max-content; padding-left: 82%; padding-top: 2%;">
+                <div class="col" style="max-width: max-content; padding-right: 0;"><button (click)="closeModal()"
+                        id="annuler" type="button" class="btn btn-primary inputFormmat">Annuler</button></div>
+                <div class="col" style="max-width: max-content; padding-right: 0;"><button type="button submit"
+                        class="btn btn-primary inputFormmat">Créer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!----------------------------------------Text Input---------------------------------------------->
+<div class="dropdown col" style="max-width: 25%;margin-left: 6%;">
+    <div class="row" style="margin-bottom: 3%;"><label>Identifiant Certification</label>
+    </div>
+    <div class="row"><input type="text" class="form-control inputFormmat"></div>
+</div>
+<!---------------------------------------Check Box----------------------------------->
+<div class="col dropdown" style="margin-top:3%;margin-bottom: 3%;margin-left: 2%;max-width: max-content;"
+    class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formcontrolname="etat"
+        name="formationcheck">
+    <label class="form-check-label" for="flexCheckChecked">
+        Certification
+    </label>
+</div>
+<!--------------------------------------Radio button------------------------------------->
+<div class="row">
+    <div class="col" style="max-width: max-content;">
+        <input type="radio" name="drone" checked>
+        <label style="padding-left: 7px;" for="huey">Effectuée</label>
+    </div>
+    <div class="col" style="max-width: max-content;">
+        <input type="radio" name="drone">
+        <label style="padding-left: 7px;" for="dewey">Abandonnée</label>
+    </div>
+    <div class="col" style="max-width: max-content;">
+        <input type="radio" name="drone" checked>
+        <label style="padding-left: 7px;" for="huey">Abandonnée [Force
+            majeur]</label>
+    </div>
+    <div class="col" style="max-width: max-content;">
+        <input type="radio" name="drone">
+        <label style="padding-left: 7px;" for="dewey">
+            Le stagiaire ne s’est pas présenté</label>
+    </div>
+</div>
+<!--------------------------------Text Area--------------------------->
+<div class="dropdown col" style="max-width: 50%;">
+    <div class="row" style="margin-bottom: 1%;"><label>Observation RDV 1</label>
+    </div>
+    <div class="row">
+        <textarea type="text" height="50px" formcontrolname="" placeholder=""
+            class="form-control inputFormmat "></textarea>
+    </div>
+</div>
+<!--------------------------------Dropdown------------------------------->
+<div class="dropdown col" style="max-width: 25%;margin-left: 1%;">
+    <div class="row" style="margin-bottom: 3%;"><label>Liste des
+            coachs</label>
+    </div>
+    <div class="row"><select formcontrolname="souspermission" class="form-select inputFormmat ">
+            <option value="Bureautique">
+                --- </option>
+
+        </select></div>
+</div>

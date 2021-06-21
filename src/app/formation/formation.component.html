@@ -1,0 +1,602 @@
+<!--------------------------------------Modal1-------------------------------------------------->
+<div id="myModal1" class="modal display--5">
+    <div class="modal-content">
+        <div style="margin:0;margin-top: 1%;">
+            <a (click)="closeModal()" style="float:right;padding-right: 12px"><span style="color:#b3b3b3"
+                    class="material-icons">
+                    clear
+                </span></a>
+        </div>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button style="width:11.752vw;text-align: center;" (click)="select(1);"
+                    class="nav-link active" id="formation-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Formation</button>
+                <button style="width:11.752vw;text-align: center;" (click)="select(2)" class="nav-link"
+                    id="prog-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab"
+                    aria-controls="nav-profile" aria-selected="false">Programme</button>
+            </div>
+        </nav>
+        <form [formGroup]="formationForm" (ngSubmit)="onSubmitFormation()">
+            <div *ngIf="clicked" style="max-width:65.985vw" class="formcontainer">
+                <div class="modal-title">
+                    Ajouter une nouvelle Formation
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Type<span style="color:red">*</span></label>
+                        </div>
+                        <div class="row">
+                            <select formControlName="type" [ngClass]="{ 'is-invalid': submitted && f.type.errors }"class="form-select input">
+                                <option>---</option>
+                                <option *ngFor="let t of typesActives;let i=index" >{{t.type}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Environnement<span
+                                    style="color:red">*</span></label></div>
+                        <div class="row">
+                            <select formControlName="environment"[ngClass]="{ 'is-invalid': submitted && f.type.errors }" class="form-select input">
+                                <option>---</option>
+                                <option *ngFor="let e of environmentActive">{{e.environment}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Intitulé</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="firstName"
+                                formControlName="intitule">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col col-md-4">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Référence</label></div>
+                        <div class="row">
+                            <input type='text' class="form-control input" formControlName="referance">
+                        </div>
+                    </div>
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Désignation</label></div>
+                        <div class="row">
+                            <input type='text' class="form-control input" formControlName="designation">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Tarif</label>
+                        </div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="tarif">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Nbres Heures</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="nombre_Heures">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col col-md-2">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Code BFP</label>
+                        </div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="code_BFP">
+                        </div>
+                    </div>
+                    <div class="dropdown col col-md-4">
+                        <div style="margin-bottom: 1vh;" class="row"><label>URL Formation</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="Url_formation">
+                        </div>
+                    </div>
+                    <div class="col col-md-3">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Prestation E-Learning</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="prestataire_Elearning">
+                        </div>
+                    </div>
+                    <div class="col col-md-3">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Coût E-Learning</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="cout_Elearning">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col col-md-3">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Coût Certification</label>
+                        </div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="coutCertification">
+                        </div>
+                    </div>
+                    <div class="dropdown col col-md-5">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Prestataire Certification</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="prestataireCertification">
+                        </div>
+                    </div>
+                    <div class="col col-md-4">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Intitulé Certification</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="intituleCertification">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>URL Certification</label>
+                        </div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="UrlCertification">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Modalité pédagogique</label>
+                        </div>
+                        <div class="row">
+                            <input style="height:88px !important" type="text" class="form-control input"
+                                formControlName="modalitePedagogique">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div *ngIf="!clicked" style="max-width: 65.985vw;" class="formcontainer">
+                <div class="modal-title">
+                    Ajouter un programme de Formation
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div style="margin-bottom: 1vh;" class="row"><label>Objectifs</label></div>
+                    <div class="row">
+                        <textarea rows="25" cols="80" style="height:200px !important" type="text"
+                            class="form-control input" formControlName="Objectifs"></textarea>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Prérequis</label></div>
+                        <div class="row">
+                            <textarea style="height:50px !important" rows="25" cols="80" type='text'
+                                class="form-control input" formControlName="Prerequis"></textarea>
+                        </div>
+                    </div>
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Résultats attendus</label></div>
+                        <div class="row">
+                            <textarea style="height:50px !important" rows="25" cols="80" type='text'
+                                class="form-control input" formControlName="resultats_attendus"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:2%">
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 4%;" class="row"><label>Certification</label>
+                        </div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="certification">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Durée</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="Duree">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Public</label></div>
+                        <div class="row">
+                            <input type="text" class="form-control input" formControlName="public">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 2%;" class="row">
+                    <div class="dropdown col">
+                        <div style="margin-bottom: 1vh;" class="row"><label>Contenu</label>
+                        </div>
+                        <div class="row">
+                            <textarea style="height: 150px !important" rows="25" cols="80" type="text"
+                                class="form-control input" formControlName="contenu"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="padding-left: 6.25rem;padding-top:2.34vh;max-width:74.5vw ;" class="row">
+                <div style="padding-top:1.5rem" class="form-check col">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                        formControlName="etat" name="formationcheck" checked>
+                    <label style="padding-top: 0.5vh;" class="form-check-label" for="flexCheckChecked">
+                        Formation active
+                    </label>
+                </div>
+                <div class="col col-md-2">
+                    <button style="float: right;" (click)="closeModal()" id="annuler" type="button"
+                        class="annuler button">Annuler</button>
+                </div>
+                <div *ngIf="!update" class="col col-md-2">
+                    <button style="float: right;" type="button submit"
+                         class="button">Créer</button>
+                </div>
+                <div *ngIf="update" class="col col-md-2">
+                    <button style="float: right;" (click)="updateFormation()" type="button"
+                         class="button">Modifier</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-------------------------------------------Modal2----------------------------------------------->
+<div id="myModal2"class="modal display--5">
+    <div class="modal-content2 modal-content">
+        <div style="margin:0">
+            <a (click)="closeModal()" style="float:right;padding-right: 12px"><span style="color:#b3b3b3"
+                    class="material-icons">
+                    clear
+                </span></a>
+        </div>
+        <div style="margin-top: 4.04vh;margin-left: 6.715vw;" class="modal-title">
+            Ajouter un nouveau Type
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <form [formGroup]="typeForm" (ngSubmit)="onSubmitType()">
+                    <div class="formcontainer2">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row" style="margin-bottom: 1vh;"><label>Nouveau Type<span
+                                            style="color: red">*</span></label>
+                                </div>
+                                <div class="row"><input type="text" formControlName="type"
+                                        class="form-control input ">
+                                </div>
+                            </div>
+                            <div style="padding-left: 2.25rem;margin-top: 2.5vh;" class="form-check"><input
+                                    type="checkbox" value="" id="flexCheckChecked" formControlName="actif"
+                                    name="formationcheck" checked="" class="form-check-input "><label
+                                    style="padding-top: 0.5vh;" for="flexCheckChecked"
+                                    class="form-check-label">Actif</label></div>
+                        </div>
+                        <div style="margin-top: 14vh;" class="row">
+                            <div class="col"></div>
+                            <div class="col col-md-5"><button (click)="closeModal()" id="annuler" type="button"
+                                    class="button annuler">Annuler</button></div>
+                            <div style="padding-right: 0;" class="col"><button
+                                    type="button submit"
+                                    [disabled]="!typeForm.valid" style="padding-left: 2vw;padding-right: 2vw;"
+                                    class="button">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="padding-left:6%" class="col">
+                <img style="width:24.526vw"src="../../assets/type.svg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------------------------------Modal3----------------------------------------------------------->
+<div id="myModal3"class="modal display--5">
+    <div class="modal-content2 modal-content">
+        <div style="margin:0">
+            <a (click)="closeModal()" style="float:right;padding-right: 12px"><span style="color:#b3b3b3"
+                    class="material-icons">
+                    clear
+                </span></a>
+        </div>
+        <div style="margin-top: 4.04vh;margin-left: 6.715vw;" class="modal-title">
+            Ajouter un nouveau Environnement
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <form [formGroup]="envForm" (ngSubmit)="onSubmitEnvironnement()">
+                    <div class="formcontainer2">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row" style="margin-bottom: 1vh;"><label>Nouveau Environnement<span
+                                            style="color: red">*</span></label>
+                                </div>
+                                <div class="row"><input type="text" formControlName="environment"
+                                        class="form-control input ">
+                                </div>
+                            </div>
+                            <div style="padding-left: 2.25rem;margin-top: 2.5vh;" class="form-check"><input
+                                    type="checkbox" value="" id="flexCheckChecked" formControlName="actif"
+                                    name="formationcheck" checked="" class="form-check-input "><label
+                                    style="padding-top: 0.5vh;" for="flexCheckChecked"
+                                    class="form-check-label">Actif</label></div>
+                        </div>
+                        <div style="margin-top: 14vh;" class="row">
+                            <div class="col"></div>
+                            <div class="col col-md-5"><button (click)="closeModal()" id="annuler" type="button"
+                                    class="button annuler">Annuler</button></div>
+                            <div style="padding-right: 0;" class="col"><button
+                                    type="button submit"
+                                    [disabled]="!envForm.valid" style="padding-left: 2vw;padding-right: 2vw;"
+                                    class="button">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="padding-left:6%" class="col">
+                <img style="width:24.526vw"src="../../assets/env.svg">
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------------------------------------------------------------------------------------------->
+<div class="container">
+    <div class="list">
+        <div class="list-header">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button (click)="selectWindow(0)" class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                        aria-selected="true">Formations</button>
+                    <button (click)="selectWindow(1)" class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                        aria-selected="false">Types</button>
+                    <button (click)="selectWindow(2)" class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                        aria-selected="false">Environnements</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div *ngIf="show[0]"class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="row">
+                        <div style="max-width: max-content;" class="col">
+                            <input [(ngModel)]="searchFormation" class="searchInput" type="text"
+                                placeholder="Recherche des Formations…">
+                            <span style="position: absolute;
+                        top: 56%;
+                        left: 90%;color: #c7c7c7;font-size: 1.8vw;" class="material-icons">
+                                search
+                            </span>
+                        </div>
+                        <div style="max-width: max-content;" class="col">
+                            <button (click)="openModal1();" style="padding: 0.876vw 2.526vw;"class="button">
+                                Créer une nouvelle formation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="show[1]">
+                    <div class="row">
+                        <div style="max-width: max-content;" class="col">
+                            <input [(ngModel)]="searchType" class="searchInput" type="text"
+                                placeholder="Recherche des Types…">
+                            <span style="position: absolute;
+                        top: 56%;
+                        left: 90%;color: #c7c7c7;font-size: 1.8vw;" class="material-icons">
+                                search
+                            </span>
+                        </div>
+                        <div style="max-width: max-content;" class="col">
+                            <button (click)="openModal2()" class="button">
+                                Créer un nouveau type
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="show[2]">
+                    <div class="row">
+                        <div style="max-width: max-content;" class="col">
+                            <input [(ngModel)]="searchEnv" class="searchInput" type="text"
+                                placeholder="Recherche des Environnements">
+                            <span style="position: absolute;
+                        top: 56%;
+                        left: 90%;color: #c7c7c7;font-size: 1.8vw;" class="material-icons">
+                                search
+                            </span>
+                        </div>
+                        <div style="max-width: max-content;" class="col">
+                            <button style="padding: 0.876vw 1.526vw;" (click)="openModal3()" class="button">
+                                Créer un nouveau Environnement
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="show[0]" class="main">
+        <div class="main-title">
+            Listes des Formations
+        </div>
+        <div *ngFor="let f of formations | filter:searchFormation;let i=index" class="card">
+            <div class=row>
+                <div class="col card-title">
+                    {{f.intitule}}
+                </div>
+                <div style="text-align: right;" class="col">
+                    <div style="padding-right: 1.25rem;" class="form-check form-switch">
+                        <input class="form-check-input"(click)="updateEtat(f,i)" class="form-check-input" type="checkbox"
+                        id="etatCheckBox{{i}}" name="etatcheck{{i}}" [checked]="f.etat">
+                        <a><span (click)="deleteFormation(f)" style="margin-left: 2vw;color:#b3b3b3"
+                            class="material-icons">
+                            delete
+                        </span></a>
+                    </div>
+
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="margin-left: 2vw;padding-left: 2.336vw;" class="row">
+                <div class="col">
+                    <div class="champs-name">
+                        Type
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.type}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Environment
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.environment}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Référance
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.reference}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Nbrs Hrs
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.nombre_Heures}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Tarif
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.tarif}} €
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Code BPF
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.code_BFP}}
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #f6f6f8;height: 2px;">
+            <div style="margin-left: 2vw;padding-left: 2.336vw;" class="row">
+                <div class="col">
+                    <div class="champs-name">
+                        Cértification Préparer
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.intituleCertification}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="champs-name">
+                        Designation
+                    </div>
+                    <div class="champs-contenur">
+                        {{f.designation}}
+                    </div>
+                </div>
+                <div class="col">
+                    <button (click)="getFormerFormation(f,i);getFormationToUpdate(f)" class="modif-button">
+                        Modifier la Formation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="show[1]" class="main">
+        <div class="main-title">
+            Types de formation
+        </div>
+        <div style="padding-bottom: 0;" class="card">
+            <div style="padding-left: 2%;" class="row">
+                <div style="max-width: 9vw;" class="col table-header">
+                    ID
+                </div>
+                <div class="col table-header">
+                    Type
+                </div>
+                <div style="max-width: 16vw;" class="col table-header">
+                    Statut
+                </div>
+            </div>
+            <hr style="margin-bottom: 0;height: 2px;background-color: #f6f6f8;">
+            <div *ngFor="let t of types | filter:searchType;let i = index">
+                <div style="padding-left: 2%;margin-top:1rem;" class="row">
+                    <div style="max-width: 9vw;" class="col table-body">
+                        {{i+1}}
+                    </div>
+                    <div class="col table-body">
+                        {{t.type}}
+                    </div>
+                    <div style="max-width: 16vw;" class="col table-body">
+                        <div style="text-align: left;" class="col">
+                            <div style="padding-right: 1.25rem;" class="form-check form-switch">
+                                <div>
+                                    <input (click)="updateType(t,i)" class="form-check-input" type="checkbox"
+                                        id="typeCheckBox{{i}}" name="typecheck{{i}}" [checked]="t.actif">
+                                </div>
+                                <a><span (click)="deleteType(t)" style="margin-left: 2vw;color:#b3b3b3"
+                                    class="material-icons">
+                                    delete
+                                </span></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-bottom: 0;height: 2px;background-color: #f6f6f8;">
+            </div>
+        </div>
+    </div>
+    <div *ngIf="show[2]" class="main">
+        <div class="main-title">
+            Environnements formation
+        </div>
+        <div style="padding-bottom: 0;" class="card">
+            <div style="padding-left: 2%;" class="row">
+                <div style="max-width: 9vw;" class="col table-header">
+                    ID
+                </div>
+                <div class="col table-header">
+                    Type
+                </div>
+                <div style="max-width: 16vw;" class="col table-header">
+                    Statut
+                </div>
+            </div>
+            <hr style="margin-bottom: 0;height: 2px;background-color: #f6f6f8;">
+            <div *ngFor="let e of environments | filter:searchEnv;let i=index">
+                <div style="padding-left: 2%;margin-top:1rem;" class="row">
+                    <div style="max-width: 9vw;" class="col table-body">
+                        {{i+1}}
+                    </div>
+                    <div class="col table-body">
+                        {{e.environment}}
+                    </div>
+                    <div style="max-width: 16vw;" class="col table-body">
+                        <div style="text-align: left;" class="col">
+                            <div style="padding-right: 1.25rem;" class="form-check form-switch">
+                                <div>
+                                    <input (click)="updateEnvironnement(e,i)" class="form-check-input" type="checkbox"
+                                        id="flexSwitchCheckDefault" name="envcheck{{i}}" [checked]="e.actif">
+                                </div>
+                                <a><span (click)="deleteEnv(e)" style="margin-left: 2vw;color:#b3b3b3"
+                                    class="material-icons">
+                                    delete
+                                </span></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-bottom: 0;height: 2px;background-color: #f6f6f8;">
+            </div>
+        </div>
+    </div>

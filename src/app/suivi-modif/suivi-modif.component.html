@@ -1,0 +1,152 @@
+<!--<div class="container" style="padding-left: 0;max-width: inherit;">
+    <div class="main main--navigation">
+        <main class="catalog--view--height anchor--disabled">
+            <div id="catalog" class="catalog footer--pusher">
+                <div class="edof-tag">
+                    <section id="catalog-header-section-id" class="catalog__header">
+                        <div class="sticky--hidden">
+                            <div class="grid__row">
+                                <div class="grid__column column--6">
+                                    <h3 class="display--1 catalog__title"> Suivis des Modifications</h3>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="overflow--hidden">
+                                    <h4
+                                        class="display--4 catalog__title float--left margin--zero-top margin--large-right">
+                                        Rechercher</h4>
+                                </div>
+                                <div class="edof-tag">
+                                    <section class="tabs">
+                                        <ul role="tablist">
+                                            <li role="tab" tabindex="0" id="by-training-name-tab" aria-selected="true"
+                                                class="tabs__tab tabs__tab--active"> Recherche
+                                                rapide </li>
+                                        </ul>
+                                        <div class="edof-tag">
+                                            <section role="tabpanel" id="by-training-name-panel"
+                                                aria-labelledby="by-training-name-tab" aria-hidden="false"
+                                                class="tabs__tabpanel tabs__tabpanel--active">
+                                                <form novalidate="">
+                                                    <div class="tagger tagger--icon-before tagger--icon-after"><span
+                                                            class="icon icon--32 color--neutral">search</span>
+                                                        <div class="tagger__content"><input [(ngModel)]="searchModif"
+                                                                type="text" formcontrol="searchByTrainingTitle"
+                                                                id="searchByTrainingTitle" name="searchByTrainingTitle"
+                                                                maxlength="255"
+                                                                placeholder="Recherche des Modifications"
+                                                                class="tagger__input width--full "
+                                                                ng-reflect-maxlength="255"></div><span
+                                                            class="icon color--accent-light cursor--pointer">arrow_forward</span>
+                                                    </div>
+                                                </form>
+                                            </section>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sticky-filters" class="sticky--visible catalog__header__button">
+                            <a href="" class="button--link-accent">Haut de page <span
+                                    class="icon">arrow_upward</span></a>
+                        </div>
+                    </section>
+                </div><input type="hidden" value="0">
+                <div class="main__section text-align--center">
+                    <div>
+                        <section style="padding:0"id="catalog-trainings-list-section-id" class="catalog__results row">
+                            <table id="tableHisto" class="table table-striped table-bordered dataTable no-footer"
+                                role="grid" aria-describedby="tableHisto_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_disabled va-m" rowspan="1" colspan="1" style="width: 191px;">
+                                            Date</th>
+                                        <th class="sorting_disabled va-m" rowspan="1" colspan="1" style="width: 284px;">
+                                            Dossier</th>
+                                        <th class="sorting_disabled va-m" rowspan="1" colspan="1" style="width: 140px;">
+                                            Opération</th>
+                                        <th class="sorting_disabled va-m" rowspan="1" colspan="1" style="width: 187px;">
+                                            Utilisateur</th>
+                                        <th class="sorting_disabled va-m" rowspan="1" colspan="1" style="width: 147px;">
+                                            Ancien statut</th>
+                                        <th class="sorting_disabled va-m" rowspan="1" colspan="1" style="width: 203px;">
+                                            Nouveau statut</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr *ngFor="let d of data | filter:searchModif;let i=index"role="row" class="odd">
+                                        <td class=" va-m">{{AffichageFormateDateTime(d.modif.updatedAt)}}</td>
+                                        <td class=" va-m">{{d.client[0]?.firstName}} {{d.client[0]?.lastName}}</td>
+                                        <td class=" va-m">{{d.modif.operation}}</td>
+                                        <td class=" va-m">{{d.user[0]?.firstname}} {{d.user[0]?.lastname}}</td>
+                                        <td class=" va-m"></td>
+                                        <td class=" va-m">{{d.modif.newStatus}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+-->
+<div class="container">
+    <div>
+        <div class="page-title">
+            Suivis des Modifications
+        </div>
+    </div>
+    <div style="margin-bottom: 0;" class="list">
+        <div class="list-header">
+            <div class="row">
+                <div style="max-width: max-content;" class="col">
+                    <input [(ngModel)]="searchModif" style="margin:0;width: 74vw;" class="searchInput"
+                        type="text" placeholder="Recherche des Suivis…">
+                    <span style="position: absolute;
+                            top:18%;
+                            left: 73vw;;color: #c7c7c7;font-size: 1.8vw;" class="material-icons">
+                        search
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:2vh" class="main row">
+        <div class="tableau list-header">
+            <table id="tableHisto" style="background-color: #fff;" class="table table-bordered dataTable no-footer"
+            role="grid" aria-describedby="tableHisto_info">
+            <thead class='tableau-head'>
+                <tr role="row">
+                    <th (click)="sort('username')"class="sorting_disabled case va-m" rowspan="1" colspan="1" style="width: 191px;">
+                        Utilisateur</th>
+                    <th (click)="sort('dossier')"class="sorting_disabled case va-m" rowspan="1" colspan="1" style="width: 284px;">
+                        Dossier</th>
+                    <th (click)="sort('operation')"class="sorting_disabled case va-m" rowspan="1" colspan="1" style="width: 140px;">
+                        Opération</th>
+                    <th (click)="sort('date')"class="sorting_disabled case va-m" rowspan="1" colspan="1" style="width: 187px;">
+                        Date</th>
+                    <th class="sorting_disabled case va-m" rowspan="1" colspan="1" style="width: 147px;">
+                        Ancien statut</th>
+                    <th (click)="sort('newstatus')"class="sorting_disabled case va-m" rowspan="1" colspan="1" style="width: 203px;">
+                        Nouveau statut</th>
+                </tr>
+            </thead>
+
+            <tbody class="tableau-body">
+                <tr *ngFor="let d of data | filter:searchModif | paginate: { itemsPerPage: 20, currentPage: p };let i=index"role="row" class="odd">
+                    <td class="case va-m">{{d.user?.name}} {{d.user?.lastname}}</td>
+                    <td class="case va-m">{{d.client[0]?.firstName}} {{d.client[0]?.lastName}}</td>
+                    <td class="case va-m">{{d.modif.operation}}</td>
+                    <td class="case va-m">{{AffichageFormateDateTime(d.modif.updatedAt)}}</td>
+                    <td class="case va-m"></td>
+                    <td class="case va-m">{{d.modif.newStatus}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

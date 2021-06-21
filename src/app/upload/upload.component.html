@@ -1,0 +1,25 @@
+<div class="container" appDnd (fileDropped)="onFileDropped($event);">
+        <form action="http://localhost:3002/uploads"method="POST"enctype="multipart/form-data">
+        <input type="file" name="avatar"#fileDropRef id="fileDropRef" (change)="fileBrowseHandler($event.target.files);" /></form>
+        <img src="assets/img/dnd/ic-upload-file.svg" width="44vw;" alt="">
+        <h3>Drag and drop file here</h3>
+        <h3>or</h3>
+    <div style="padding-right: 30%;padding-left: 32%;"class="row">
+        <label for="fileDropRef">Browse for file</label>
+    </div>
+</div>
+<div class="files-list">
+    <div *ngIf="upload"class="single-file">
+        <img src="assets/img/dnd/ic-file.svg" width="30vw" alt="file">
+        <div class="info">
+            <h4 class="name">
+                {{ files[0]?.name }}
+            </h4>
+            <p class="size">
+                {{ formatBytes(files[0]?.size) }}
+            </p>
+            <app-progress [progress]="files[0]?.progress"></app-progress>
+        </div>
+        <img src="assets/img/dnd/ic-delete-file.svg" class="delete" width="10vw" alt="file" (click)="deleteFile(0)">
+    </div>
+</div>
